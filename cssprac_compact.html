@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0%;
+    }
+    
+    .slider {
+        position: absolute;
+        left: 8%;
+        width: 50%;
+        height: 7px;
+        background-color: #bbbbbb; /* Track color */
+    }
+    
+    .slider-track {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 100%;
+        height: 2px; /* Track height */
+        background-color: #000000; /* Highlight color */
+    }
+    
+    .slider-handle {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 20px;
+        background-color: #5e0050; /* Handle color */
+        border-radius: 50%;
+    }
+    
+    #fivevaluetextbox {
+        position: absolute;
+        width: 90%;
+        top: 90%;
+    }
+    </style>
+    <title>Five sliders</title>
+</head>
+<body>
+    <div id = "sweet" class="slider">
+        <div id="slider-track0" class="slider-track"></div>
+        <div id="slider-handle0" class="slider-handle"></div>
+    </div>
+    <div id = "sour" class="slider">
+      <div id="slider-track1" class="slider-track"></div>
+      <div id="slider-handle1" class="slider-handle"></div>
+    </div>
+    <div id = "tannic" class="slider">
+      <div id="slider-track2" class="slider-track"></div>
+      <div id="slider-handle2" class="slider-handle"></div>
+    </div>
+    <div id = "bodied" class="slider">
+      <div id="slider-track3" class="slider-track"></div>
+      <div id="slider-handle3" class="slider-handle"></div>
+    </div>
+    <div id = "alcoholic" class="slider">
+      <div id="slider-track4" class="slider-track"></div>
+      <div id="slider-handle4" class="slider-handle"></div>
+    </div>
+    <div id="fivevaluetextbox">hello</div>
+    <script type ="text/JavaScript">
+      function moveslider(sliderid,handleid) {
+        const slider = document.getElementById(sliderid);
+        const handle = document.getElementById(handleid);
+        
+        let isDragging = false;
+
+        handle.addEventListener("mousedown", (e) => {
+          isDragging = true;
+        });
+
+        document.addEventListener("mouseup", () => {
+          isDragging = false;
+        });
+
+        document.addEventListener("mousemove", (e) => {
+          if (isDragging) {
+              const sliderRect = slider.getBoundingClientRect();
+              const handleRect = handle.getBoundingClientRect();
+
+              let newPosition = e.clientX - sliderRect.left - handleRect.width / 2;
+
+              // Ensure the handle stays within the slider bounds
+              if (newPosition < 0) {
+                newPosition = 0;
+              } else if (newPosition > sliderRect.width) {
+                newPosition = sliderRect.width ;
+              }
+
+              handle.style.left = newPosition + "px";
+          }
+        });
+      };
+      function retrieveposition(handleid){
+        // Assuming your object has an ID, let's say 'myObject'
+        var myObject = document.getElementById(handleid);
+        var myslider = document.querySelector('.slider')
+        // Check if the object is found
+        if (myObject) {
+            // Get the position relative to the viewport
+            var rect = myObject.getBoundingClientRect();
+            var sliderrect = myslider.getBoundingClientRect();
+            
+            return (rect.left+(rect.width/2)-sliderrect.left)/sliderrect.width;
+        } else {
+            return "object not found";
+        }
+      };
+      function updateposition(textboxid, valueid) {
+        var myDiv = document.getElementById(textboxid);
+        var position = retrieveposition(valueid);
+        myDiv.textContent = position
+    }  
+      var tastes = new Array("sweet", "sour", "tannic", "bodied", "alcoholic");
+      var anheight = 10;
+      for (var ataste = 0; ataste < 5; ataste++) {
+          var a_slider = document.getElementById(tastes[ataste]);
+          a_slider.style.top = anheight+(anheight*ataste)+"%";
+          moveslider("slider-track"+ ataste, "slider-handle"+ ataste);
+      }
+      setInterval(() => {
+        updateposition("fivevaluetextbox","slider-handle0","sweet")
+      }, 1000);
+    </script>
+</body>
+</html>
