@@ -46,9 +46,9 @@
       top:50%;
       left:85%;
       background-color: #dc00bb;
-      padding: 6px 12px;
-      font-weight: 900;
-      font-size:25px;
+      padding: 1% 2%;
+      font-weight: 500;
+      font-size:150%;
       color: #000000;
       border-radius: 5px;
     }
@@ -57,8 +57,8 @@
       position:absolute;
       top:50%;
       left:65%;
-      font-weight: 300;
-      font-size:25px;
+      font-weight: 500;
+      font-size:150%;
       color: #fffb80;
       font-family:sans-serif;
     }
@@ -192,12 +192,15 @@
 
           var questmark = document.getElementById(tastes[ataste]+"-mark");
           questmark.style.top = verticalpos+"%";
-          var currentTop = parseInt(window.getComputedStyle(questmark).top);
-          questmark.style.top = (currentTop - 16) + "px";
+          var percentTop = questmark.offsetTop;
+          questmark.style.top = ((percentTop/window.innerHeight)*100)-1.5+"%"
+ 
+
 
           var tastelabel = document.getElementById(tastes[ataste]+"-label");
           tastelabel.style.top = verticalpos+"%";
-          tastelabel.style.top = (currentTop - 12) + "px";
+          tastelabel.style.top = ((percentTop/window.innerHeight)*100)-1.5+"%"
+
       }
 
       setInterval(() => {
