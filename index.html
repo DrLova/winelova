@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       body {
+        background-color: #302034;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -17,7 +18,7 @@
         left: 8%;
         width: 50%;
         height: 7px;
-        background-color: #bbbbbb; /* Track color */
+        background-color: #67446f; /* Track color */
     }
     
     .slider-track {
@@ -27,7 +28,7 @@
         transform: translate(0, -50%);
         width: 100%;
         height: 2px; /* Track height */
-        background-color: #000000; /* Highlight color */
+        background-color: #fffb80; /* Highlight color */
     }
     
     .slider-handle {
@@ -36,8 +37,30 @@
         transform: translate(-50%, -50%);
         width: 20px;
         height: 20px;
-        background-color: #5e0050; /* Handle color */
+        background-color: #ff00d9a7; /* Handle color */
         border-radius: 50%;
+    }
+
+    .question-mark {
+      position:absolute;
+      top:50%;
+      left:85%;
+      background-color: #dc00bb;
+      padding: 6px 12px;
+      font-weight: 900;
+      font-size:25px;
+      color: #000000;
+      border-radius: 5px;
+    }
+
+    .tastelabel {
+      position:absolute;
+      top:50%;
+      left:65%;
+      font-weight: 300;
+      font-size:25px;
+      color: #fffb80;
+      font-family:sans-serif;
     }
     
     #fivevaluetextbox {
@@ -46,7 +69,7 @@
         top: 90%;
     }
     </style>
-    <title>Five sliders</title>
+    <title>search wines</title>
 </head>
 <body>
     <div id = "sweet" class="slider">
@@ -70,6 +93,19 @@
       <div id="slider-handle4" class="slider-handle"></div>
     </div>
     <div id="fivevaluetextbox">hello</div>
+
+    <div id ="sweet-mark" class="question-mark"> ? </div>
+    <div id ="sour-mark" class="question-mark"> ? </div>
+    <div id ="tannic-mark" class="question-mark"> ? </div>
+    <div id ="bodied-mark" class="question-mark"> ? </div>
+    <div id ="alcoholic-mark" class="question-mark"> ? </div>
+
+    <div id ="sweet-label" class="tastelabel">甜度</div>
+    <div id ="sour-label" class="tastelabel">酸度</div>
+    <div id ="tannic-label" class="tastelabel">丹宁质</div>
+    <div id ="bodied-label" class="tastelabel">酒体感</div>
+    <div id ="alcoholic-label" class="tastelabel">酒精度</div>
+
     <script type ="text/JavaScript">
       function moveslider(sliderid, handleid) {
         const slider = document.getElementById(sliderid);
@@ -147,11 +183,23 @@
     }  
       var tastes = new Array("sweet", "sour", "tannic", "bodied", "alcoholic");
       var anheight = 10;
+      var toppad = 20;
       for (var ataste = 0; ataste < 5; ataste++) {
+          var verticalpos = toppad + (anheight*ataste);
           var a_slider = document.getElementById(tastes[ataste]);
-          a_slider.style.top = anheight+(anheight*ataste)+"%";
+          a_slider.style.top = verticalpos+"%";
           moveslider("slider-track"+ ataste, "slider-handle"+ ataste);
+
+          var questmark = document.getElementById(tastes[ataste]+"-mark");
+          questmark.style.top = verticalpos+"%";
+          var currentTop = parseInt(window.getComputedStyle(questmark).top);
+          questmark.style.top = (currentTop - 16) + "px";
+
+          var tastelabel = document.getElementById(tastes[ataste]+"-label");
+          tastelabel.style.top = verticalpos+"%";
+          tastelabel.style.top = (currentTop - 12) + "px";
       }
+
       setInterval(() => {
         updateposition("fivevaluetextbox","slider-handle0","sweet")
       }, 1000);
