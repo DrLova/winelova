@@ -70,6 +70,7 @@
     <div id ="bodied-label" class="tastelabel">酒体感</div>
     <div id ="alcoholic-label" class="tastelabel">酒精度</div>
 
+    <a id="find!" class ="question-mark" href="underconst.html">寻找你的美酒！</a>
     <script type ="text/JavaScript">
       function moveslider(sliderid, handleid) {
         const slider = document.getElementById(sliderid);
@@ -159,13 +160,13 @@
           var percentTop = questmark.offsetTop;
           questmark.style.top = ((percentTop/window.innerHeight)*100)-1.5+"%"
  
-
-
           var tastelabel = document.getElementById(tastes[ataste]+"-label");
           tastelabel.style.top = verticalpos+"%";
           tastelabel.style.top = ((percentTop/window.innerHeight)*100)-1.5+"%"
-
       }
+      var finderlink = document.getElementById("find!");
+      finderlink.style.top = toppad+(5*anheight)+"%";
+      finderlink.style.left = "8%";
 
       setInterval(() => {
         updateposition("fivevaluetextbox","slider-handle0","sweet")
