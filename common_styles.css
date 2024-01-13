@@ -1,0 +1,58 @@
+body {
+    background-color: #efeeb0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0%;
+}
+
+.tastelabel {
+  position:absolute;
+  top:50%;
+  left:60%;
+  font-weight: 500;
+  font-size:100%;
+  color: #630000;
+  font-family:sans-serif;
+}
+
+.tastetitle {
+    position:absolute;
+    top:10%;
+    left:45%;
+    font-weight: 500;
+    font-size:200%;
+    color: #630000;
+    font-family:sans-serif;
+  }
+
+#fivevaluetextbox {
+    position: absolute;
+    width: 90%;
+    top: 90%;
+}
+
+.question-mark {
+    position:absolute;
+    top:50%;
+    left:90%;
+    background-color: #500044;
+    padding: 1% 2%;
+    font-weight: 500;
+    font-size:100%;
+    color: #fefb61;
+    border-radius: 5px;
+}
+
+.backhome {
+    position:absolute;
+    top:10%;
+    left:10%;
+    background-color: #500044;
+    padding: 1% 2%;
+    font-weight: 500;
+    font-size:100%;
+    color: #fefb61;
+    border-radius: 5px;
+}
