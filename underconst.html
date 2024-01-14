@@ -7,14 +7,28 @@
     <title>数据库仍在建设中！</title>
 </head>
 <body>
-    <div id="title" class="tastetitle">不好意思！</div>
+    <div id="title" class="tastelabel">不好意思！</div>
     <div id="content" class="tastelabel">我们有许多不同种类的葡萄酒需要添加到数据库中，其中有一款是完美适合你的，烦请稍作耐心！</div>
     <a id="to homepage" class="backhome" href="index.html">主页</a>
+    <div id="join text" class="tastelabel">进群!</div>
+    <img id="joingroup" src="qrcode.png" alt="Join the group">
+    </body>
     <script type ="text/JavaScript">
+        var title = document.getElementById("title");
+        title.style.top = "10%";
         var content = document.getElementById("content");
         content.style.width = "80%";
         content.style.top = "20%";
         content.style.left = "10%";
+        var contenrect = content.getBoundingClientRect();
+        var joingroup = document.getElementById("joingroup");
+        joingroup.style.width = "20%";
+        joingroup.style.position = "absolute";
+        joingroup.style.top = contenrect.top+contenrect.height+10+"px";
+        var joinrect = joingroup.getBoundingClientRect();
+        var jointext = document.getElementById("join text");
+        jointext.style.position = "absolute";
+        jointext.style.top = joinrect.top+joinrect.height+10+"px";
     </script>
 </body>
 </html>
