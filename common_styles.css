@@ -1,5 +1,9 @@
+:root {
+    --aviolet: #511200;
+}
+
 body {
-    background-color: #efeeb0;
+    background-color: #eeedc1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,17 +17,17 @@ body {
   left:60%;
   font-weight: 500;
   font-size:100%;
-  color: #630000;
+  color: var(--aviolet);
   font-family:sans-serif;
 }
 
 .tastetitle {
     position:absolute;
     top:10%;
-    left:45%;
+    align-self: center;
     font-weight: 500;
     font-size:200%;
-    color: #630000;
+    color: var(--aviolet);
     font-family:sans-serif;
   }
 
@@ -37,7 +41,7 @@ body {
     position:absolute;
     top:50%;
     left:90%;
-    background-color: #500044;
+    background-color: var(--aviolet);
     padding: 1% 2%;
     font-weight: 500;
     font-size:100%;
@@ -49,10 +53,31 @@ body {
     position:absolute;
     top:10%;
     left:10%;
-    background-color: #500044;
+    background-color: var(--aviolet);
     padding: 1% 2%;
     font-weight: 500;
     font-size:100%;
     color: #fefb61;
     border-radius: 5px;
+}
+
+.winepagewine {
+    position: absolute;
+    width: auto;
+    max-height: 30%;
+    top: 20%;
+    left: 80%;
+}
+
+.winepagesubtitle {
+    color: var(--aviolet);
+    position:absolute;
+    align-self: center;
+}
+
+.winepagetext {
+    color: var(--aviolet);
+    position:absolute;
+    width: 65%;
+    right: 75%;
 }
