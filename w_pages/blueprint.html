@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Infinito</title>
+</head>
+<body>
+    <div id="internationalname" class="tastetitle">Infinito</div>
+    <div id="chinesename" class="winepagesubtitle">英菲尼特红葡萄酒</div>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <a href="..\w_pictures/1.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/1.png" alt="Infinito">
+    </a>
+    <script type ="text/JavaScript">
+        var titlew = document.getElementById("internationalname");
+        var subtitle = document.getElementById("chinesename");
+        var titlerect = titlew.getBoundingClientRect();
+        subtitle.style.top = titlerect.top+titlerect.height+'px'
+    </script>
+</body>
+</html>
