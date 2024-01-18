@@ -69,6 +69,13 @@ body {
     left: 80%;
 }
 
+.qrcode {
+    position:absolute;
+    max-width: 30%;
+    width: auto;
+    align-self: center;
+}
+
 .winepagesubtitle {
     color: var(--aviolet);
     position:absolute;
