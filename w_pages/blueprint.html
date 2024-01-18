@@ -19,15 +19,17 @@
         <img id="winepic" class="winepagewine" src="..\w_pictures/1.png" alt="Infinito">
     </a>
     <script type ="text/JavaScript">
-        var winename = document.getElementById("wineryname");
-        winename.style.top = "5%";
-        var titlew = document.getElementById("internationalname");
-        var subtitle = document.getElementById("chinesename");
-        var descr = document.getElementById("description");
-        var titlerect = titlew.getBoundingClientRect();
-        subtitle.style.top = titlerect.top+titlerect.height+10+'px';
-        var subtitlerect = subtitle.getBoundingClientRect();
-        descr.style.top = subtitlerect.top+subtitlerect.height+10+'px';
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var winery = document.getElementById("wineryname");
+        winery.style.top = "5%";
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
         var bottle = document.getElementById("winepic");
         var bottlerect = bottle.getBoundingClientRect();
         var descrect = descr.getBoundingClientRect();
