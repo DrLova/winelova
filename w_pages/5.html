@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Righi New Endy Rosso </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
+    <div id="internationalname" class="tastetitle">Righi New Endy Rosso </div>
+    <div id="chinesename" class="winepagesubtitle">Righi New Endy Rosso </div>
+    <div id="description" class="winepagetext">这款葡萄酒采用拉姆布鲁斯科·萨拉米诺（Lambrusco Salamino）和拉姆布鲁斯科·格拉斯帕罗萨（Lambrusco Grasparossa）葡萄品种，酒精度为7.5% vol。采用红葡萄酒发酵工艺，葡萄在进行3-5天的浸渍后，酿酒过程中使用18-25℃的温度与选定的酵母进行缓慢发酵。其中一部分经过甜味过滤的葡萄汁会在0°C的冷却罐中保存。随后，拉姆布鲁斯科葡萄酒与相应的甜味过滤液一同置于高压釜中进行第二次发酵和起泡过程。在达到理想的压力和残留糖度后，这款气泡酒经过瓶装。酒液呈现出明亮的红宝石色，泡沫活泼持久。香气醇厚，略带果香。口感清新，和谐，活泼，味道鲜美而持久。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">0.08 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">SPARKLING</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/5.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/5.png" alt="Righi New Endy Rosso ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var winery = document.getElementById("wineryname");
+        winery.style.top = "5%";
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var bottle = document.getElementById("winepic");
+        var bottlerect = bottle.getBoundingClientRect();
+        var descrect = descr.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottlerect.height);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = descrect.left+'px';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.left= bottlerect.left+'px';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = descrect.left+'px';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.left = bottlerect.left+'px';
+        var groupinvite = placeunder("addgroup",tierval,10);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
