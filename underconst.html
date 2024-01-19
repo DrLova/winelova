@@ -7,28 +7,19 @@
     <title>数据库仍在建设中！</title>
 </head>
 <body>
-    <div id="title" class="tastelabel">不好意思！</div>
-    <div id="content" class="tastelabel">我们有许多不同种类的葡萄酒需要添加到数据库中，其中有一款是完美适合你的，烦请稍作耐心！</div>
     <a id="to homepage" class="backhome" href="index.html">主页</a>
-    <div id="join text" class="tastelabel">进群!</div>
-    <img id="joingroup" src="qrcode.png" alt="Join the group">
-    </body>
+    <div id="sorry" class="tastetitle">不好意思！</div>
+    <div id="message" class="winepagesubtitle">我们有许多不同类型的葡萄酒要添加到数据库中，其中一个一定适合您，所以请耐心等待！与此同时，您可以查阅我们的<a href="list.html">葡萄酒列表！</a></div>
     <script type ="text/JavaScript">
-        var title = document.getElementById("title");
-        title.style.top = "10%";
-        var content = document.getElementById("content");
-        content.style.width = "80%";
-        content.style.top = "20%";
-        content.style.left = "10%";
-        var contenrect = content.getBoundingClientRect();
-        var joingroup = document.getElementById("joingroup");
-        joingroup.style.width = "20%";
-        joingroup.style.position = "absolute";
-        joingroup.style.top = contenrect.top+contenrect.height+10+"px";
-        var joinrect = joingroup.getBoundingClientRect();
-        var jointext = document.getElementById("join text");
-        jointext.style.position = "absolute";
-        jointext.style.top = joinrect.top+joinrect.height+10+"px";
+      function placeunder(obid,anchor,offset) {
+          let tomove = document.getElementById(obid);
+          let rectangle = anchor.getBoundingClientRect();
+          tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+          return tomove
+      }
+      var backhome = document.getElementById("to homepage");
+      var pagetitle = placeunder("sorry",backhome,20);
+      var message = placeunder("message",pagetitle,20)
     </script>
 </body>
 </html>
