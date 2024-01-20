@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Lambrusco Emilia Amabile Rosato</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
+    <div id="internationalname" class="tastetitle">Lambrusco Emilia Amabile Rosato</div>
+    <div id="chinesename" class="winepagesubtitle">Lambrusco Emilia Amabile Rosato</div>
+    <div id="description" class="winepagetext">这款红酒采用Lambrusco Salamino、Lambrusco di Sorbara和Lambrusco Grasparossa三种葡萄品种酿造而成，酒精度为7.5% Vol。在采摘后，葡萄经过榨汁，酿酒液立即被冷却。低温浸渍有助于提取颜色并突显Lambrusco水果的特色。随后，在不锈钢槽中通过控制温度和酵母的添加进行发酵。一旦残糖达到理想水平，通过快速冷却来中断发酵过程。最后进行过滤和装瓶。这款红酒呈珊瑚粉色，香气清新、细致、果味浓郁，尤其散发出明显的紫罗兰香气。口感清新、活泼，宜人柔和，呈现出和谐而果香丰富的特点</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">7.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">SPARKLING</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/4.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/4.png" alt="Lambrusco Emilia Amabile Rosato">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var winery = document.getElementById("wineryname");
+        winery.style.top = "5%";
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var bottle = document.getElementById("winepic");
+        var bottlerect = bottle.getBoundingClientRect();
+        var descrect = descr.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottlerect.height);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = descrect.left+'px';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.left= bottlerect.left+'px';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = descrect.left+'px';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.left = bottlerect.left+'px';
+        var groupinvite = placeunder("addgroup",tierval,10);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
