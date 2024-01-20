@@ -17,6 +17,8 @@
         position: absolute;
         top:0%;
         left: 30%;
+        max-width: 30%;
+        word-wrap: break-word;
       }
 
       .alcwine{
@@ -84,11 +86,11 @@
       var backhome = document.getElementById("to homepage");
       var listitle = placeunder("listitle",backhome,20);
       var lis0 = listunder(["num0","name0","alc0","price0"],listitle,10)
-      var lis1 = listunder(["num1","name1","alc1","price1"],lis0[0],10)
-      var lis2 = listunder(["num2","name2","alc2","price2"],lis1[0],10)
-      var lis3 = listunder(["num3","name3","alc3","price3"],lis2[0],10)
-      var lis4 = listunder(["num4","name4","alc4","price4"],lis3[0],10)
-      var lis5 = listunder(["num5","name5","alc5","price5"],lis4[0],10)
+      var lis1 = listunder(["num1","name1","alc1","price1"],lis0[1],10)
+      var lis2 = listunder(["num2","name2","alc2","price2"],lis1[1],10)
+      var lis3 = listunder(["num3","name3","alc3","price3"],lis2[1],10)
+      var lis4 = listunder(["num4","name4","alc4","price4"],lis3[1],10)
+      var lis5 = listunder(["num5","name5","alc5","price5"],lis4[1],10)
   </script>
 </body>
 </html>
