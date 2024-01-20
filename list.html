@@ -16,19 +16,19 @@
       .namewine{
         position: absolute;
         top:0%;
-        left: 25%;
+        left: 30%;
       }
 
       .alcwine{
         position: absolute;
         top:0%;
-        left: 60%;
+        right: 30%;
       }
 
       .pricewine{
         position: absolute;
         top:0%;
-        left: 90%;
+        right: 5%;
       }
     </style>
 </head>
@@ -42,9 +42,30 @@
   <div id="price0" class="pricewine">价格</div>
 
   <div id="num1" class="numwine">1</div>
-  <a id="name1" class="namewine" href="w_pages/1.html">Infinito</a>
+  <a id="name1" class="namewine" href="w_pages/1.html">Infinito </a>
   <div id="alc1" class="alcwine">11.5 %</div>
   <div id="price1" class="pricewine">$</div>
+
+  <div id="num2" class="numwine">2</div>
+  <a id="name2" class="namewine" href="w_pages/2.html">Fior di vino </a>
+  <div id="alc2" class="alcwine">11.5 %</div>
+  <div id="price2" class="pricewine">$</div>
+
+  <div id="num3" class="numwine">3</div>
+  <a id="name3" class="namewine" href="w_pages/3.html">Righi New Endy Bianco</a>
+  <div id="alc3" class="alcwine">7.5 %</div>
+  <div id="price3" class="pricewine">$</div>
+
+  <div id="num4" class="numwine">4</div>
+  <a id="name4" class="namewine" href="w_pages/4.html">Righi New Endy Rosato</a>
+  <div id="alc4" class="alcwine">7.5 %</div>
+  <div id="price4" class="pricewine">$</div>
+
+  <div id="num5" class="numwine">5</div>
+  <a id="name5" class="namewine" href="w_pages/5.html">Righi New Endy Rosso </a>
+  <div id="alc5" class="alcwine">8.0 %</div>
+  <div id="price5" class="pricewine">$</div>
+
   <script type ="text/JavaScript">
       function placeunder(obid,anchor,offset) {
           let tomove = document.getElementById(obid);
@@ -64,6 +85,10 @@
       var listitle = placeunder("listitle",backhome,20);
       var lis0 = listunder(["num0","name0","alc0","price0"],listitle,10)
       var lis1 = listunder(["num1","name1","alc1","price1"],lis0[0],10)
+      var lis2 = listunder(["num2","name2","alc2","price2"],lis1[0],10)
+      var lis3 = listunder(["num3","name3","alc3","price3"],lis2[0],10)
+      var lis4 = listunder(["num4","name4","alc4","price4"],lis3[0],10)
+      var lis5 = listunder(["num5","name5","alc5","price5"],lis4[0],10)
   </script>
 </body>
 </html>
