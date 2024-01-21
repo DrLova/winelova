@@ -63,10 +63,9 @@ body {
 
 .winepagewine {
     position: absolute;
-    width: auto;
-    max-height: 30%;
-    top: 20%;
-    left: 80%;
+    max-width: 25%;
+    height: auto;
+    right: 5%;
 }
 
 .qrcode {
@@ -85,6 +84,7 @@ body {
 .winepagetext {
     color: var(--aviolet);
     position:absolute;
-    width: 65%;
+    max-width: 65%;
     left: 5%;
+    word-wrap: break-word;
 }
