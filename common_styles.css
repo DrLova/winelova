@@ -63,8 +63,8 @@ body {
 
 .winepagewine {
     position: absolute;
-    max-width: 25%;
-    height: auto;
+    height: 30%;
+    width: auto;
     right: 5%;
 }
 
