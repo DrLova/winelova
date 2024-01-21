@@ -35,10 +35,12 @@
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
         var descr =placeunder("description",subtitle,10);
-        var bottle = placeunder("winepic",subtitle,10);
-        var bottlerect = bottle.getBoundingClientRect();
         var descrect = descr.getBoundingClientRect();
-        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottlerect.height);
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/12.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
         var alc = document.getElementById("alcollevel");
         var tier = document.getElementById("tier");
         var price = document.getElementById("price");
