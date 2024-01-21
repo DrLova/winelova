@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>OTTOCENTONERO Lambrusco dell'Emilia IGT Vino Frizzante Secco</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
+    <div id="internationalname" class="tastetitle">OTTOCENTONERO Lambrusco dell'Emilia IGT Vino Frizzante Secco</div>
+    <div id="chinesename" class="winepagesubtitle">特莎蒂洛蓝布鲁斯科起泡红葡萄酒</div>
+    <div id="description" class="winepagetext">这款意大利葡萄酒是由Lambrusco Salamino和Lambrusco Grasparossa葡萄品种酿造而成，酒精含量为11.5% vol。葡萄是手工采摘的，为了保留酸度，提前采摘葡萄，然后立即轻轻压榨以提取花汁。随后，在16-18°C的温度下进行酒精发酵，以获得基础葡萄酒，然后保持在低温下以防止苹果酸发酵。基础葡萄酒将在自动克拉维中通过添加相同品种的葡萄汁进行"发泡"，持续约一个月，直到达到5巴的压力。由于Prosecco是一种芳香型葡萄酒，不建议在瓶中进行二次发酵，否则酵母的香气可能掩盖其芳香性。
+
+葡萄酒呈深红色，明亮，带有紫色的反光。香气浓郁，带有野果的气息。口感有活力，饱满而和谐。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">11.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/13.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/13.png" alt="OTTOCENTONERO Lambrusco dell'Emilia IGT Vino Frizzante Secco">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/13.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
