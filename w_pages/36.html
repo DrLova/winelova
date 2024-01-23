@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Collezione Colli Martani Rosso DOC </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Terre della Custodia(守护者酒庄)</div>
+    <div id="internationalname" class="tastetitle">Collezione Colli Martani Rosso DOC </div>
+    <div id="chinesename" class="winepagesubtitle">守护者格莱至美红葡萄酒  </div>
+    <div id="description" class="winepagetext">桑娇维塞、萨格拉蒂诺和梅洛葡萄的联袂演出，打造出一款令人沉醉的红葡萄酒，酒精度13.5%，散发着迷人的宝石红光泽。
+
+来自托斯卡纳的热情: 葡萄采摘期跨越9月底至10月初，确保成熟度和风味达到巅峰。
+橡木桶的魔法: 陈酿6个月的 tonneaux 大橡木桶赋予葡萄酒细腻的单宁和优雅的复杂性。
+馥郁的香气: 红果和花香萦绕鼻尖，甜蜜香料和一抹大黄的芬芳令人惊喜。
+丝滑的口感: 入口柔顺，天鹅绒般的单宁轻抚味蕾，悠长矿物质余味令人回味无穷。
+
+这是一款个性鲜明的葡萄酒，既有桑娇维塞的活泼酸度，又有萨格拉蒂诺的强劲结构，以及梅洛的圆润果香，堪称餐桌上的百搭之选。搭配经典的意大利烤肉、野味炖菜或奶酪拼盘，都能碰撞出美妙的味蕾体验。
+
+</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOC</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/36.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/36.png" alt="Collezione Colli Martani Rosso DOC ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/36.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
