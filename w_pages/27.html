@@ -4,25 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\common_styles.css">
-    <title>Vallone Levante Merlot </title>
+    <title>Marchio Prosecco rose' Doc</title>
 </head>
 <body>
     <a id="to homepage" class="backhome" href="..\index.html">主页</a>
-    <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
-    <div id="internationalname" class="tastetitle">Vallone Levante Merlot </div>
-    <div id="chinesename" class="winepagesubtitle">乐凡特梅洛红葡萄酒</div>
-    <div id="description" class="winepagetext">这是使用梅洛葡萄 (Merlot) 酿造的红葡萄酒，酒精度为 14%。葡萄采摘于9月中旬，经过 26-27℃ 下长达 20 天浸渍，并运用淋皮、放血和微氧化技术萃取风味。随后苹果酸-乳酸发酵自然进行。陈酿方面，葡萄酒一部分在新橡木桶中，一部分在玻璃化水泥罐中陈酿，再经过 3 个月的瓶中陈酿后完美熟成。酒液呈现宝石红般的色泽，散发成熟红浆果、香草和咖啡的馥郁果香。口感饱满醇厚，单宁细腻柔顺，余味悠长，收尾干净利落。
+    <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
+    <div id="internationalname" class="tastetitle">Marchio Prosecco rose' Doc</div>
+    <div id="chinesename" class="winepagesubtitle">Marchio Prosecco rose' Doc</div>
+    <div id="description" class="winepagetext">这是由格雷拉 (Glera) 和黑皮诺 (Pinot Noir) 葡萄酿成的迷人桃红气泡酒，酒精度仅为 11%，轻盈宜人。采用经典的夏马特 (Charmat) 酿造法，让酵母与葡萄酒液接触 30-90 天，充分萃取葡萄本身的果香和花香，不会被酵母产生的香气掩盖。
+酒液呈现迷人的淡粉色，透着优雅的铜色光泽，仿佛一杯落日的余晖。香气清丽，格雷拉葡萄带来细腻的洋槐花香，黑皮诺葡萄则赋予一丝紫罗兰和覆盆子的芬芳。入口清爽，浓郁的花香和果香交织，酒体饱满和谐，余味带有愉悦的莓果气息，仿佛夏日花园里的一缕清风。
+这款桃红气泡酒非常适合搭配餐前开胃饮用，或是在炎热的夏日享用。其精致优雅的口感和迷人的色泽，也使其成为婚礼庆祝或浪漫晚宴的绝佳选择。
+
+
+产地：意大利
+葡萄品种：格雷拉 (Glera)、黑皮诺 (Pinot Noir)
+酒精度：11% vol
+颜色：淡粉色，带优雅铜色光泽
+香气：洋槐花、紫罗兰、覆盆子
+口感：清爽、浓郁花香和果香，酒体饱满和谐，余味带有莓果气息
+
 </div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
-    <div id="alcolval" class="winepagesubtitle">13.5 %</div>
+    <div id="alcolval" class="winepagesubtitle">11.0 %</div>
     <div id="tier" class="winepagesubtitle">等级</div>
-    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="tierval" class="winepagesubtitle">DOCG</div>
     <div id="price" class="winepagesubtitle">价格</div>
-    <div id="priceval" class="winepagesubtitle">$</div>
+    <div id="priceval" class="winepagesubtitle">$$</div>
     <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
     <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
-    <a href="..\w_pictures/17.png">
-        <img id="winepic" class="winepagewine" src="..\w_pictures/17.png" alt="Vallone Levante Merlot ">
+    <a href="..\w_pictures/27.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/27.png" alt="Marchio Prosecco rose' Doc">
     </a>
     <script type ="text/JavaScript">
         function placeunder(obid,anchor,offset) {
@@ -38,7 +49,7 @@
         var descr =placeunder("description",subtitle,10);
         var descrect = descr.getBoundingClientRect();
         var bottle = placeunder("winepic",subtitle,10);
-        bottle.src = '../w_pictures/17.png';
+        bottle.src = '../w_pictures/27.png';
 
         var bottlerect = bottle.getBoundingClientRect();
         var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
