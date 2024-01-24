@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Teatro Governo all'uso toscano</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Cantine Divine(蒂维妮)</div>
+    <div id="internationalname" class="tastetitle">Teatro Governo all'uso toscano</div>
+    <div id="chinesename" class="winepagesubtitle">Teatro Governo all'uso toscano</div>
+    <div id="description" class="winepagetext">桑娇维塞葡萄酒是一种产自意大利托斯卡纳地区的红葡萄酒。它由桑娇维塞葡萄酿造而成，该葡萄品种以其成熟晚、酸度高、单宁重而闻名。
+
+桑娇维塞葡萄酒的酒精含量约为13.5%，颜色为深红色。其香气主要表现为樱桃、覆盆子、李子、香草和肉桂。口感上，桑娇维塞葡萄酒酒体饱满，酸度明亮，单宁结实，具有良好的陈年潜力。
+
+桑娇维塞葡萄酒非常适合搭配红肉、烤肉、奶酪和意大利面等。它也可以单独饮用，作为开胃酒或餐后酒。
+
+以下是桑娇维塞葡萄酒的简要概述：
+
+葡萄品种：桑娇维塞
+产地：意大利托斯卡纳地区
+酒精含量：约13.5%
+颜色：深红色
+香气：樱桃、覆盆子、李子、香草、肉桂
+口感：酒体饱满、酸度明亮、单宁结实
+搭配建议：红肉、烤肉、奶酪、意大利面
+
+桑娇维塞葡萄酒是一种非常复杂和多变的葡萄酒。它可以根据不同的酿造方法和陈年条件表现出不同的风味。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/52.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/52.png" alt="Teatro Governo all'uso toscano">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/52.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

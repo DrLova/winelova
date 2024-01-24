@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Maschio Valdobbiadene Prosecco Superiore DOCG Millesimato Extra Dry</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
+    <div id="internationalname" class="tastetitle">Maschio Valdobbiadene Prosecco Superiore DOCG Millesimato Extra Dry</div>
+    <div id="chinesename" class="winepagesubtitle">玛斯乔普赛克起泡葡萄酒</div>
+    <div id="description" class="winepagetext">瓦尔多比亚代内普洛赛克超级DOCG是一种产自意大利威尼托地区的起泡酒。它由格雷拉葡萄酿造而成，该葡萄品种以其高酸度、新鲜度和花香而闻名。
+
+瓦尔多比亚代内普洛赛克超级DOCG的酒精含量约为11%，颜色为淡黄绿色。其香气主要表现为柑橘类水果、花朵和蜂蜜。口感上，瓦尔多比亚代内普洛赛克超级DOCG清爽、果香浓郁、口感柔和。
+
+瓦尔多比亚代内普洛赛克超级DOCG非常适合搭配海鲜、白肉和奶酪。它也可以单独饮用，作为开胃酒或餐后酒。
+
+以下是瓦尔多比亚代内普洛赛克超级DOCG的简要概述：
+
+葡萄品种：格雷拉
+产地：意大利威尼托地区
+酒精含量：约11%
+颜色：淡黄绿色
+香气：柑橘类水果、花朵、蜂蜜
+口感：清爽、果香浓郁、口感柔和
+
+
+瓦尔多比亚代内普洛赛克超级DOCG是一种非常受欢迎的起泡酒，在世界各地都有售。它是庆祝活动和聚会的好选择。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">11.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOCG</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/56.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/56.png" alt="Maschio Valdobbiadene Prosecco Superiore DOCG Millesimato Extra Dry">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/56.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Lahn Sauvignon</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">St. Micheal Eppan(圣米凯酒庄)</div>
+    <div id="internationalname" class="tastetitle">Lahn Sauvignon</div>
+    <div id="chinesename" class="winepagesubtitle">圣米凯酒庄长相思白葡萄酒</div>
+    <div id="description" class="winepagetext">
+白苏维浓是一种产自世界各地的白葡萄酒。它由白苏维浓葡萄酿造而成，该葡萄品种以其高酸度、草本植物香气和矿物质风味而闻名。
+
+白苏维浓葡萄酒的酒精含量约为13.5%，颜色为淡黄绿色。其香气主要表现为青草、柠檬、苹果、奇异果和百香果。口感上，白苏维浓葡萄酒酸度明亮，带有草本植物香气和矿物质风味。
+
+白苏维浓葡萄酒非常适合搭配海鲜、白肉和奶酪。它也可以单独饮用，作为开胃酒或餐后酒。
+
+以下是白苏维浓葡萄酒的简要概述：
+
+葡萄品种：白苏维浓
+产地：世界各地
+酒精含量：约13.5%
+颜色：淡黄绿色
+香气：青草、柠檬、苹果、奇异果、百香果
+口感：酸度明亮，带有草本植物香气和矿物质风味
+搭配建议：海鲜、白肉、奶酪
+
+白苏维浓葡萄酒是一种清新而多变的葡萄酒。它可以根据不同的酿造方法和陈年条件表现出不同的风味。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOC</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/55.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/55.png" alt="Lahn Sauvignon">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/55.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
