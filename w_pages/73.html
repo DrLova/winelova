@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Riesling Veneto IGT </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Italo Cescon(凯斯顿酒庄 )</div>
+    <div id="internationalname" class="tastetitle">Riesling Veneto IGT </div>
+    <div id="chinesename" class="winepagesubtitle">凯斯顿雷司令白葡萄酒</div>
+    <div id="description" class="winepagetext">葡萄品种：长相思
+
+酒精含量：12%
+
+酿造工艺：
+
+手工采摘葡萄。
+去皮破碎后进行10小时的低温浸渍。
+轻柔压榨后，将果汁进行酵母选育，在12℃的控温条件下进行发酵。
+在不锈钢罐中进行4个月的酵母沉淀，再进行筛选和过滤，然后在瓶中陈酿3个月。
+
+颜色：
+
+金黄色，带有微微的绿色反光。
+
+
+香气：
+
+深邃、清新、绿色，带有果香、花香和蔬菜香气：青椒和黑加仑的香气与桃子和热带水果的香气相遇，还带有薄荷和香料的香气。
+
+口感：
+
+优雅、和谐、饱满的酒体，热带水果的温暖和圆润的口感与新鲜、酸爽的绿色香气相融合。
+
+总结：
+
+这款长相思葡萄酒具有清新、优雅和复杂的风格，非常适合搭配海鲜、白肉和亚洲菜肴。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">12.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/73.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/73.png" alt="Riesling Veneto IGT ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/73.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

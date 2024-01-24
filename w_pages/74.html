@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Sauvignon Friuli Grave DOC </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Italo Cescon(凯斯顿酒庄 )</div>
+    <div id="internationalname" class="tastetitle">Sauvignon Friuli Grave DOC </div>
+    <div id="chinesename" class="winepagesubtitle">凯斯顿长相思白葡萄酒</div>
+    <div id="description" class="winepagetext">葡萄品种：巴贝拉
+
+酒精含量：13.5%
+
+酿造工艺：
+
+葡萄采摘后迅速运送到酒窖，去梗破碎后进行轻柔压榨，以提取果皮和果肉中最优质的香气成分。
+在温控发酵罐中进行发酵，温度控制在27-28℃。浸皮时间为8天，期间葡萄酒会定期进行倒桶，以便果汁吸收果皮中的所有微量元素，并温和地提取颜色。葡萄酒在几乎完全干燥时进行转桶。
+
+
+颜色：
+
+葡萄酒呈现鲜艳、明亮、深邃的宝石红色。随着陈年，会逐渐呈现出宝石红的色泽。
+
+香气：
+
+香气清新果香，带有黑莓和红色水果果酱的香气，还带有香草和烤榛子的香气。
+
+口感：
+
+口感饱满强劲，带有轻微的酸度。木质风味明显，但与其他特征很好地融合在一起。
+
+总结：
+
+这款巴贝拉葡萄酒具有浓郁、优雅和复杂的风格，非常适合搭配红肉、奶酪和烤制菜肴。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">12.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOC</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/74.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/74.png" alt="Sauvignon Friuli Grave DOC ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/74.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Ca' maiol Lugana Prestige</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Ca' Maiol(卡玛奥酒庄)</div>
+    <div id="internationalname" class="tastetitle">Ca' maiol Lugana Prestige</div>
+    <div id="chinesename" class="winepagesubtitle">卡玛奥优选露嘉娜白葡萄酒</div>
+    <div id="description" class="winepagetext">葡萄品种：赤霞珠、赤霞珠法兰克
+
+酒精含量：13%
+
+酿造工艺：
+
+葡萄手工采摘。首先进行破碎和去梗，然后进行4/5天的冷浸渍。随后进行20天的酒精发酵和苹果酸乳酸发酵，温度控制在28℃以下。酒液澄清后，在橡木桶中陈酿9个月，然后在瓶中陈酿6个月。
+[Image of 葡萄酒赤霞珠]
+
+颜色：
+
+呈现深邃的宝石红色，带有紫色反光。
+
+香气：
+
+* 香气浓郁、复杂、迷人，带有红色水果、香料和草本植物的香气。
+
+口感：
+
+口感干爽、饱满，具有良好的集中度，带有明显的果香和香草香气。
+
+总结：
+
+这款赤霞珠葡萄酒采用赤霞珠和赤霞珠法兰克混酿而成，具有浓郁、复杂和优雅的风格。适合搭配红肉、烤制菜肴和奶酪。
+
+以下是一些具体的建议：
+
+这款葡萄酒与烤牛排、羊排、野味等红肉菜肴搭配非常合适。
+它也可以与烤制或熏制肉类、奶酪或意大利面等菜肴搭配。
+这款葡萄酒的最佳饮用温度为16-18℃。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOCG</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/80.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/80.png" alt="Ca' maiol Lugana Prestige">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/80.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

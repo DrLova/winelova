@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Marchesi di Barolo Barbera del Monferrato DOC </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Marchesi di Barolo(巴罗洛侯爵酒庄)</div>
+    <div id="internationalname" class="tastetitle">Marchesi di Barolo Barbera del Monferrato DOC </div>
+    <div id="chinesename" class="winepagesubtitle">巴罗洛侯爵庄园巴贝拉红葡萄酒</div>
+    <div id="description" class="winepagetext">葡萄品种：桑娇维塞、梅洛
+
+酒精含量：13.5%
+
+酿造工艺：
+
+葡萄经过精选后手工采摘。果汁在果皮上浸渍12-14天。在酒精发酵和苹果酸乳酸发酵之后，葡萄酒在斯拉沃尼亚或法国橡木桶中陈酿6-10个月，然后在瓶中进一步陈酿。
+
+颜色：
+
+呈现鲜艳的宝石红色。
+
+香气：**
+
+香气浓郁持久，带有浆果的香气，与橡木桶的香气相得益彰。
+
+口感：
+
+口感饱满浓郁，突出了香气的持久性。
+
+总结：**
+
+这款葡萄酒由桑娇维塞和梅洛两种葡萄品种混酿而成，具有浓郁、优雅和复杂的风格。适合搭配红肉、烤制菜肴和奶酪。
+
+以下是一些具体的建议：
+
+这款葡萄酒与烤牛排、羊排或猪排等红肉菜肴搭配非常合适。
+它也可以与烤制或熏制肉类、奶酪或意大利面等菜肴搭配。
+这款葡萄酒的最佳饮用温度为16-18℃。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOC</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/75.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/75.png" alt="Marchesi di Barolo Barbera del Monferrato DOC ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/75.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

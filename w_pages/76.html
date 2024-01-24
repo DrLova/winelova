@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Chianti Classico DOCG Famiglia Zingarelli </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Rocca delle Macie(罗卡马契酒庄 )</div>
+    <div id="internationalname" class="tastetitle">Chianti Classico DOCG Famiglia Zingarelli </div>
+    <div id="chinesename" class="winepagesubtitle">津加雷利经典基安蒂红葡萄酒</div>
+    <div id="description" class="winepagetext">葡萄品种：桑娇维塞、巴贝拉、马尔泽米诺、格罗佩罗
+
+酒精含量：13.5%
+
+酿造工艺：
+
+葡萄在9月底之前手工采摘，然后进行轻柔压榨。在单独发酵和不锈钢罐中陈酿每个品种后，进行混酿，然后在橡木桶中陈酿6个月，最后装瓶。
+
+颜色：
+
+呈现红宝石色。
+
+香气：
+
+香气迷人，带有各种红色和黑色浆果和其他深色水果的香气。黑加仑、黑醋栗和新鲜柔软的李子是香气的主调。香气中还带有淡淡的烟草叶、摩卡的香气和橡木的香气。
+
+口感：
+
+口感清新、平衡、中等酒体。
+
+总结：
+
+这款葡萄酒由四种意大利传统葡萄品种混酿而成，具有清新、优雅和复杂的风格。适合搭配红肉、烤制菜肴和奶酪。
+
+以下是一些具体的建议：
+
+这款葡萄酒与烤牛排、羊排或猪排等红肉菜肴搭配非常合适。
+它也可以与烤制或熏制肉类、奶酪或意大利面等菜肴搭配。
+这款葡萄酒的最佳饮用温度为16-18℃。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOCG</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/76.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/76.png" alt="Chianti Classico DOCG Famiglia Zingarelli ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/76.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

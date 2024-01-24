@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Müller Thurgau delle Venezie IGT </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Italo Cescon(凯斯顿酒庄 )</div>
+    <div id="internationalname" class="tastetitle">Müller Thurgau delle Venezie IGT </div>
+    <div id="chinesename" class="winepagesubtitle">凯斯顿米勒土高白葡萄酒</div>
+    <div id="description" class="winepagetext">葡萄品种：雷司令·图高
+
+酒精含量：12%
+
+酿造工艺：
+
+手工采摘葡萄。
+去皮破碎后进行轻柔压榨，出汁率为60%。
+在14℃的控温条件下进行10天发酵。
+筛选后，在不锈钢罐中陈酿5个月，再在瓶中陈酿3个月。
+
+颜色：
+
+金黄色，带有微微的绿色反光。
+
+香气：
+
+清新、细腻、复杂。花香中带有桃花、蔷薇和黑加仑的香气，绿叶香中带有鼠尾草和草本植物的香气，果香中带有哈密瓜和桃子的香气，还带有一点点蜜饯的香气。
+
+口感：
+
+非常愉悦的芳香味和协调的酒体赋予了葡萄酒优雅的特性，突出了清新、浓郁和精致的特点，并在口中留下杏仁的余味。
+
+总结：
+
+这款葡萄酒具有清新、优雅和复杂的特点，非常适合在夏季享用。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">12.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/71.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/71.png" alt="Müller Thurgau delle Venezie IGT ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/71.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
