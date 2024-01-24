@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>VILLA FLAMINIO 17 APPASSIMENTO IGP</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
+    <div id="internationalname" class="tastetitle">VILLA FLAMINIO 17 APPASSIMENTO IGP</div>
+    <div id="chinesename" class="winepagesubtitle">VILLA FLAMINIO 17 APPASSIMENTO IGP</div>
+    <div id="description" class="winepagetext">这款西拉葡萄酒采用Appassimento（干燥）工艺酿造而成。在葡萄完全成熟后，将其在葡萄树上留置8-10天，使其失去部分水分，从而浓缩果实的风味和糖分。
+
+葡萄酒呈现出深红宝石色，带有浓郁的紫色反光。香气浓郁，充满了成熟的红色水果，如黑莓、黑加仑、樱桃和李子等。口感饱满，单宁柔顺，带有持久的香草风味。
+
+简而言之，这款葡萄酒具有以下特点：
+
+葡萄品种：西拉
+酒精度：17%
+颜色：深红宝石色
+香气：成熟的红色水果
+口感：饱满、单宁柔顺、香草风味持久
+
+适合搭配：
+
+红肉类菜肴，如烤牛排、烤羊排、烤猪排等
+浓郁的奶酪，如帕尔玛干酪、羊乳酪等
+巧克力甜品</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">17.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/66.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/66.png" alt="VILLA FLAMINIO 17 APPASSIMENTO IGP">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/66.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
