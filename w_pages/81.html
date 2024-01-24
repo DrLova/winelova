@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Italo Cescon Cabernet</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Italo Cescon(凯斯顿酒庄 )</div>
+    <div id="internationalname" class="tastetitle">Italo Cescon Cabernet</div>
+    <div id="chinesename" class="winepagesubtitle">凯斯顿红葡萄酒</div>
+    <div id="description" class="winepagetext">这款葡萄酒由赤霞珠和品丽珠混酿而成，酒精度为13%。葡萄采用手工采摘，先进行破碎和去梗，然后进行4/5天的冷浸渍。随后进行20天的酒精发酵和苹果酸乳酸发酵，发酵温度控制在28°C以下。酒液澄清后，进行9个月的橡木桶陈酿，再进行6个月的瓶陈。
+
+这款葡萄酒呈现深红色，带有紫色反光。香气浓郁、复杂、迷人，果香浓郁，带有浆果、香料和草本植物的香气。口感干型，酒体饱满，有明显的果香和香草味。
+
+总体而言，这款葡萄酒风味浓郁，口感复杂，具有较好的陈年潜力。适合搭配红肉、烤鸭等菜肴。
+
+以下是简短的翻译：
+
+赤霞珠-品丽珠混酿红葡萄酒
+
+酒精度：13%
+
+酿造：手工采摘，冷浸渍4/5天，酒精发酵和苹果酸乳酸发酵20天，橡木桶陈酿9个月，瓶陈6个月
+
+颜色：深红色，带有紫色反光
+
+香气：浓郁、复杂、迷人，果香浓郁，带有浆果、香料和草本植物的香气
+
+口感：干型，酒体饱满，有明显的果香和香草味</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">12.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOC</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/81.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/81.png" alt="Italo Cescon Cabernet">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/81.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Fiano di avellino DOCG </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Mastroberardino(马斯特酒庄)</div>
+    <div id="internationalname" class="tastetitle">Fiano di avellino DOCG </div>
+    <div id="chinesename" class="winepagesubtitle">马斯特酒庄阿韦利诺红葡萄酒</div>
+    <div id="description" class="winepagetext">葡萄品种：格雷科
+酒精度：12.5%
+酿造：在16-18℃的温度下进行不锈钢罐发酵，然后在不锈钢罐中陈酿约4个月，一直与酒泥接触。
+
+颜色：金黄色，带有淡淡的绿色反光。
+香气：香气浓郁，持久。闻起来有明显的果香，如柠檬、橘子和杏仁。
+口感：一入口，就感受到宽广的酸度和矿物质的辛辣味，这是在图福地区种植的葡萄的典型特征。随后，会感受到柔和的香草味。
+
+这款葡萄酒产自意大利南部的坎帕尼亚地区，采用格雷科葡萄酿制而成。格雷科是该地区最古老的葡萄品种之一，具有浓郁的果香和矿物质香气。这款葡萄酒具有明亮的果香，口感清爽，酸度宽广，矿物质味明显，伴有柔和的香草味。适合搭配海鲜、白肉等菜肴。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">不可用 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOCG</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/88.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/88.png" alt="Fiano di avellino DOCG ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/88.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
