@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Maschio Prosecco DOC ORGANIC</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
+    <div id="internationalname" class="tastetitle">Maschio Prosecco DOC ORGANIC</div>
+    <div id="chinesename" class="winepagesubtitle">玛斯乔起泡葡萄酒</div>
+    <div id="description" class="winepagetext">这款来自意大利威尼托大区的 Prosecco 起泡酒，由 Glera 葡萄酿制而成，酒精度为 11% vol。
+
+葡萄在 9 月初采摘，然后进行压榨和发酵。发酵完成后，葡萄酒与酵母一起在罐中进行二次发酵。发酵时间从 30 天到 90 天不等，具体取决于所需的风格。
+
+酒液呈现明亮的稻草黄色。香气甜美，带有金银花、蜜饯、白色水果、苹果和梨的香气。口感清爽、丰富，带有细腻柔和的气泡，回味芳香宜人。
+
+这款起泡酒非常适合搭配开胃菜、海鲜或沙拉等菜肴。它也是开派对或庆祝活动的理想选择。
+
+以下是一些具体的描述：
+
+香气: 金银花、蜜饯、白色水果（苹果、梨）、杏
+口感: 清爽、丰富、细腻柔和的气泡、芳香宜人的回味
+酸度: 中等偏低
+酒精度: 11% vol</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">11.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOC</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/49.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/49.png" alt="Maschio Prosecco DOC ORGANIC">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/49.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

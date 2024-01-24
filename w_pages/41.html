@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>VILLA FLAMINIO 15 NEGROAMARO IGP</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
+    <div id="internationalname" class="tastetitle">VILLA FLAMINIO 15 NEGROAMARO IGP</div>
+    <div id="chinesename" class="winepagesubtitle">VILLA FLAMINIO 15 NEGROAMARO IGP</div>
+    <div id="description" class="winepagetext">这里是用中文描述您提供的 Negroamaro 葡萄酒信息的一段话：
+
+这款来自意大利南部普利亚大区的尼格罗阿马罗 (Negroamaro) 红葡萄酒，散发着浓郁迷人的果香和优雅的酒体，令人印象深刻。
+葡萄品种: 尼格罗阿马罗 (Negroamaro)
+酒精度: 15% Vol
+酿造工艺: 经过约 10 天的恒温浸渍，然后使用精选酵母进行酒精发酵。陈酿于不锈钢罐和混凝土罐中。
+颜色: 深紫色，带有迷人的紫罗兰色调。
+香气: 馥郁的水果果酱和野生浆果香气扑鼻而来。
+口感: 顺滑平衡，酒体饱满，余味悠长，令人愉悦。
+
+
+尼格罗阿马罗葡萄以其浓郁的果味和独特的个性而闻名，这款葡萄酒完美地展现了这一点。成熟的浆果果酱香气，如黑李子、覆盆子和蓝莓，与优雅的紫罗兰花香交织在一起，营造出一种复杂的香气层次。口感上，它平衡而柔顺，单宁柔和，酸度适中，令人回味无穷。这款酒非常适合搭配烤肉、意大利面和浓郁的奶酪，也能单独享用。
+
+</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">15.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/41.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/41.png" alt="VILLA FLAMINIO 15 NEGROAMARO IGP">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/41.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

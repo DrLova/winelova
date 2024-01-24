@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Appassimento Puglia IGT Rosso</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Masseria Doppio Passo(玛斯利多宝酒庄)</div>
+    <div id="internationalname" class="tastetitle">Appassimento Puglia IGT Rosso</div>
+    <div id="chinesename" class="winepagesubtitle">玛斯利多宝帕塞托红葡萄酒</div>
+    <div id="description" class="winepagetext">这是一款来自意大利普利亚大区的 Negroamaro-Malvasia-Merlot 混酿红葡萄酒，酒精度为 14.5% vol，拥有浓郁的果香、复杂的风味和悠长的余味。
+
+葡萄在 10 月初采摘，经过风干，赋予葡萄酒成熟水果如李子和葡萄干的典型香气。经过压榨和发酵，果皮与葡萄汁长时间接触，萃取浓郁的红色和迷人的香气。葡萄酒在橡木桶中陈酿 3-4 个月，赋予其优雅的香气和风味。
+
+酒液呈现浓郁的紫红色，带有琥珀色反光。香气浓郁，带有黑果、红果、香料和烟草的气息。口感饱满，圆润，单宁柔顺，酸度适中，余味悠长。
+
+
+这款混酿葡萄酒展现了 Negroamaro、Malvasia 和 Merlot 三种葡萄品种的独特个性。它非常适合搭配烤肉、意大利面或浓郁的奶酪等菜肴。
+
+以下是一些具体的描述：
+
+香气: 黑果（黑李子、黑莓、黑加仑）、红果（覆盆子、草莓、樱桃）、香料（丁香、肉桂、胡椒）、烟草
+口感: 饱满、圆润、单宁柔顺、酸度适中、余味悠长
+单宁: 中等偏高
+酸度: 中等偏高
+
+这款葡萄酒的品质非常优秀，值得品尝。</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">14.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/46.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/46.png" alt="Appassimento Puglia IGT Rosso">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/46.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

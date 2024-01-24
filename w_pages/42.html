@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Botter 3Donne supertuscan igt 3D</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Botter(波特酒庄)</div>
+    <div id="internationalname" class="tastetitle">Botter 3Donne supertuscan igt 3D</div>
+    <div id="chinesename" class="winepagesubtitle">奥纳红葡萄酒</div>
+    <div id="description" class="winepagetext">这款由桑娇维塞 (Sangiovese)、赤霞珠 (Cabernet Sauvignon) 和梅洛 (Merlot) 混酿而成的红葡萄酒，酒精度为 13% Vol，拥有令人赞叹的浓郁风格。经过为期 7/8 天的浸渍萃取颜色和结构，葡萄汁在不锈钢罐中以 25/27°C 的恒温进行酒精和苹果酸乳酸发酵。
+
+酒液呈现迷人的深红色，香气饱满复杂，成熟浆果的气息萦绕鼻尖，同时伴随着巧克力和香脂的细微香气。入口口感干爽平衡，和谐而富有活力，余味悠长，单宁柔和。整体而言，这是一款令人愉悦的混酿，展现了不同葡萄品种的独特个性，非常适合搭配肉类、意大利面或奶酪等菜肴。
+</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/42.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/42.png" alt="Botter 3Donne supertuscan igt 3D">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/42.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
