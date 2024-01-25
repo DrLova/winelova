@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Sul Vulcano Etna Rosso DOC </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Donnafugata(多娜佳塔酒庄 )</div>
+    <div id="internationalname" class="tastetitle">Sul Vulcano Etna Rosso DOC </div>
+    <div id="chinesename" class="winepagesubtitle">多娜佳塔埃特纳红葡萄酒</div>
+    <div id="description" class="winepagetext">内罗马斯卡利西 (Nerello Mascalese) 葡萄酿造了这款迷人的佳酿，散发着优雅而细腻的魅力。13.5% 的酒精度赋予其轻盈宜人的个性。
+
+葡萄经过严格的挑选，并在不锈钢罐中发酵，果皮浸渍 8-10 天，温度控制在 25°C。随后部分陈酿于不锈钢罐中，部分陈酿于法国橡木桶 (二三新桶) 中 14 个月，然后在瓶中至少陈酿 7 个月。
+
+酒体呈淡宝石红，香气优雅，散发野生浆果 (草莓和红醋栗) 和花香，以及肉桂和肉豆蔻的细腻香料气息。
+
+口感与香气完美和谐，清新怡人，单宁细腻，余味悠长平衡。这是一款值得细细品味、令人印象深刻的葡萄酒，非常适合搭配海鲜、鱼类和白肉，也是奶酪爱好者的绝佳选择。
+
+内罗马斯卡利西葡萄酒以其优雅细腻的风格和清爽宜人的口感而闻名，是西西里岛最具代表性的葡萄酒之一。如果您正在寻找一款适合搭配各种美食的轻盈葡萄酒，内罗马斯卡利西绝对值得一试！
+</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">14.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOC</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/112.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/112.png" alt="Sul Vulcano Etna Rosso DOC ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/112.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Val di Suga Rosso di Montalcino</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Val di Suga(维尔德苏嘉酒庄)</div>
+    <div id="internationalname" class="tastetitle">Val di Suga Rosso di Montalcino</div>
+    <div id="chinesename" class="winepagesubtitle">苏嘉山谷蒙塔奇诺红葡萄酒</div>
+    <div id="description" class="winepagetext">來自托斯卡納的經典桑嬌維塞(Sangiovese)葡萄釀造，散發著迷人魅力。13.5%的酒精度，賦予其優雅的個性。
+
+葡萄采摘后，在150升不锈钢罐中发酵，带果皮浸渍15天，温度控制在30℃以下。随后在斯拉夫橡木桶中陈酿6个月，再瓶中陈酿至少3个月。
+
+酒体呈现明亮的宝石红，香气活泼，散发新鲜的红莓果香，如樱桃和黑醋栗，随后伴有甜美和辛辣的细微香气。
+
+入口饱满柔顺，初入口即感受到非常成熟的红莓果香，单宁优雅，余味悠长。
+
+這款桑嬌維塞葡萄酒非常適合搭配意大利經典菜肴，例如披萨、意大利面和烤肉。 
+</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOC</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/103.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/103.png" alt="Val di Suga Rosso di Montalcino">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/103.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

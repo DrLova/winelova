@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Cuvee' 16</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Masseria Doppio Passo(玛斯利多宝酒庄)</div>
+    <div id="internationalname" class="tastetitle">Cuvee' 16</div>
+    <div id="chinesename" class="winepagesubtitle"> 玛斯利多宝特酿红葡萄酒</div>
+    <div id="description" class="winepagetext">黑暗女王内格罗阿玛罗(Negroamaro)和原始魅力普里米蒂沃(Primitivo)葡萄完美融合，打造出这款浓郁醇厚的佳酿，16%的酒精度赋予其强劲个性。
+
+葡萄在葡萄园中自然风干，枝条剪断后，果实留在藤蔓上25-30天。在这漫长的成熟过程中，葡萄会失去40%的重量，但糖分和花青素的浓度会增加，为酒体奠定坚实基础。采摘后，葡萄经手工压榨，开始发酵。果皮会在发酵过程中与果肉一起浸渍，萃取浓郁的香气和色泽。
+
+发酵后的葡萄酒将在全新橡木桶中陈酿至少9个月。70%的橡木来自生长迅速、透氧性高的美国橡木，有助于加强普里米蒂沃的葡萄特性。其余30%则来自生长缓慢、透氧性不高的法国橡木，在陈酿过程中完美提升内格罗阿玛罗的典型风味。
+
+酒体呈现深邃明亮的红宝石色，紫红色泽若隐若现。香气馥郁，初闻果香扑鼻，红莓果酱的甜蜜气息萦绕鼻尖，随后演变成辛香与烟草的交织旋律。
+
+入口丰富浓郁，单宁结构清晰，但又不失天然的圆润，细腻优雅，余味悠长，尽显其迷人魅力。这款酒非常适合搭配红肉、烤肉和野味，也是奶酪爱好者的绝佳选择。
+</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">16.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">VDT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/106.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/106.png" alt="Cuvee' 16">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/106.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

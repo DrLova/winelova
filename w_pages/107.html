@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Conte Giangirolamo Igp Puglia</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Tenute Girolamo(吉罗拉莫酒庄)</div>
+    <div id="internationalname" class="tastetitle">Conte Giangirolamo Igp Puglia</div>
+    <div id="chinesename" class="winepagesubtitle">Conte Giangirolamo Igp Puglia</div>
+    <div id="description" class="winepagetext">原始魅力普里米蒂沃(Primitivo)和黑暗女王内格罗阿玛罗(Negroamaro)葡萄完美融合，酿造出這款强劲优雅的佳酿，14.5%的酒精度赋予其令人难忘的个性。葡萄经过橡木桶浸渍，并在法国橡木桶中陈酿22/24个月，随后瓶中陈酿6个月，赋予其复杂而细腻的香气和口感。酒体呈现浓郁的宝石红，泛着迷人的紫罗兰色调。香气馥郁，果香四溢，樱桃、黑莓、黑醋栗的芬芳萦绕鼻尖，优雅的香料气息与香草和巧克力的甜蜜交织，令人陶醉。入口干爽，酒体饱满，和谐悠长，单宁适中，完美呼应丰富优雅的香气。这是一款值得细细品味、令人印象深刻的佳酿，非常适合搭配红肉、烤肉和野味，也是奶酪爱好者的绝佳选择。
+</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">14.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/107.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/107.png" alt="Conte Giangirolamo Igp Puglia">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/107.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

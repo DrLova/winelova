@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Cuvee 17</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Masseria Doppio Passo(玛斯利多宝酒庄)</div>
+    <div id="internationalname" class="tastetitle">Cuvee 17</div>
+    <div id="chinesename" class="winepagesubtitle">Cuvee 17</div>
+    <div id="description" class="winepagetext">蒙特普尔恰诺 (Montepulciano)、内格罗阿玛罗 (Negroamaro) 和兰布鲁斯科 (Lambrusco) 葡萄的完美融合酿造了这款强劲而优雅的佳酿，17% 的酒精度赋予其令人难忘的个性。
+
+葡萄在成熟后不会立即采摘，而是留在藤蔓上几天。在此过熟过程中，由酿酒师监控和监督，提取物、花青素和糖分的浓度会增加，从而创造出一款具有浓郁结构、颜色和更高酒精含量的葡萄酒。
+
+采摘后，葡萄串分成两批。第一批采用传统方法在受控温度下浸渍 15/20 天，以提取葡萄中的所有贵族物质。第二批在低温（12/14℃）下发酵，以强调果味。酒精和苹果酸乳酸发酵在桶中进行，受控温度约为 25℃。
+
+酒体呈浓郁深红色，带有紫色调。
+
+香气直接而复杂，初闻小红莓和果酱的果香，氧化后演变成辛辣香气，带有淡淡的香草味。
+
+口感细腻，圆润饱满。入口宽广复杂，一开始的红果香气让位于香料和更甜美的感觉，带有淡淡的香草味。单宁柔和，在悠长而持久的余味中完美平衡。
+
+这是一款值得细细品味、令人印象深刻的佳酿，非常适合搭配红肉、烤肉和野味，也是奶酪爱好者的绝佳选择。
+</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">17.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">VDT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/110.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/110.png" alt="Cuvee 17">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/110.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

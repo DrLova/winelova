@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Chianti Classico Riserva DOCG Famiglia Zingarelli 2013 </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Rocca delle Macie(罗卡马契酒庄 )</div>
+    <div id="internationalname" class="tastetitle">Chianti Classico Riserva DOCG Famiglia Zingarelli 2013 </div>
+    <div id="chinesename" class="winepagesubtitle">津加雷利经典基安蒂珍藏红葡萄酒</div>
+    <div id="description" class="winepagetext">由经典的三大紅葡萄品種釀造的這款佳釀，散發著令人難以抗拒的魅力。它融合了桑嬌維塞(Sangiovese)、卡本內蘇維濃(Cabernet Sauvignon)和梅洛(Merlot)的特性，酒精含量14%，赋予其强劲而优雅的个性。
+
+经过精心挑选的葡萄，采用傳統基安蒂古典產區的酿造方法，并在法国橡木桶中陈酿两年，然后瓶中至少陈酿三个月，进一步提升其复杂性和优雅性。
+
+酒体呈现迷人的宝石红，随着陈年逐渐演变成迷人的石榴石色。香气丰富浓郁，黑醋栗和玛拉斯卡樱桃的芬芳扑鼻而来，夹杂着秘鲁胡椒和甜蜜香料的细微香气。
+
+入口温暖，强劲，优雅，余味悠长。是一款搭配红肉、烤肉、野味和干酪的绝佳佳酿。
+
+这款葡萄酒是经典与现代的完美融合，值得细细品味，一定会让您留下深刻的印象。
+</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOCG</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/105.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/105.png" alt="Chianti Classico Riserva DOCG Famiglia Zingarelli 2013 ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/105.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
