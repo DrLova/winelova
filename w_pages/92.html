@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Vallone 18 Gradi  </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
+    <div id="internationalname" class="tastetitle">Vallone 18 Gradi  </div>
+    <div id="chinesename" class="winepagesubtitle">瓦罗内18红葡萄酒</div>
+    <div id="description" class="winepagetext">黑曼罗（Negroamaro）葡萄酒是一种意大利红葡萄酒，以其浓郁的红宝石色、复杂的果香和强劲的口感而闻名。
+
+该酒的酿造过程包括精心挑选的葡萄、2周的葡萄干燥、25℃以下的温控发酵、使用耐高温酵母的发酵、自然发酵的苹果酸乳酸发酵、2个月的玻璃水泥罐陈酿、10个月的橡木桶陈酿和4周的瓶陈。
+
+黑曼罗葡萄酒的酒精度通常为18% vol。其香气复杂而果香浓郁，带有覆盆子、黑莓和樱桃的气息。口感强劲，带有成熟的浆果、草本和矿物质的味道。单宁柔软，余味悠长。
+
+黑曼罗葡萄酒适合搭配各种浓郁的肉类菜肴，如牛排、羊排和野味。也可以搭配陈年奶酪。
+
+以下是黑曼罗葡萄酒的简要概述：
+
+葡萄品种：黑曼罗
+酒精度：18% vol
+酿造方法：精心挑选的葡萄、葡萄干燥、温控发酵、耐高温酵母发酵、苹果酸乳酸发酵、玻璃水泥罐陈酿、橡木桶陈酿、瓶陈
+颜色：浓郁的红宝石色
+香气：复杂的果香，带有覆盆子、黑莓和樱桃的气息
+口感：强劲，带有成熟的浆果、草本和矿物质的味道
+</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">18.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">IGT</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/92.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/92.png" alt="Vallone 18 Gradi  ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/92.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

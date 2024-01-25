@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Floramundi Cerasuolo di Vittoria DOCG</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Donnafugata(多娜佳塔酒庄 )</div>
+    <div id="internationalname" class="tastetitle">Floramundi Cerasuolo di Vittoria DOCG</div>
+    <div id="chinesename" class="winepagesubtitle">多娜佳塔弗拉蒙迪红葡萄酒</div>
+    <div id="description" class="winepagetext">弗拉帕托（Frappato）和黑珍珠（Nero d'Avola）是西西里岛最具代表性的葡萄品种之一。它们经常被混合在一起酿造出一种名为Cerasuolo di Vittoria的DOCG葡萄酒。
+
+Cerasuolo di Vittoria是一种具有鲜明特色的葡萄酒，以其明亮的红宝石色、浓郁的果香和清爽的口感而闻名。
+
+酿造Cerasuolo di Vittoria葡萄酒的过程包括在不锈钢罐中进行发酵和浸皮，持续约10天，温度为25-28℃。随后进行8个月的罐陈和至少7个月的瓶陈。
+
+Cerasuolo di Vittoria葡萄酒的香气浓郁而芬芳，带有成熟的红色浆果、紫罗兰和香料的香气。口感清新，果味丰富，单宁柔软。这是一款令人愉悦的红葡萄酒，适合搭配各种菜肴，如意大利面、披萨和海鲜。
+
+以下是Cerasuolo di Vittoria葡萄酒的简要概述：
+
+葡萄品种：弗拉帕托（Frappato）和黑珍珠（Nero d'Avola）
+酒精度：13% vol
+酿造方法：不锈钢罐发酵、浸皮、罐陈、瓶陈
+颜色：明亮的红宝石色
+香气：浓郁的果香和花香
+口感：清新，果味丰富，单宁柔软</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.5 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOCG</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/97.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/97.png" alt="Floramundi Cerasuolo di Vittoria DOCG">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/97.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

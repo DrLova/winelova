@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Lighea Sicilia DOC </title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Donnafugata(多娜佳塔酒庄 )</div>
+    <div id="internationalname" class="tastetitle">Lighea Sicilia DOC </div>
+    <div id="chinesename" class="winepagesubtitle">多娜佳塔莱伊亚白葡萄酒</div>
+    <div id="description" class="winepagetext">Zibibbo 是一种意大利白葡萄品种，以其清新的口感和浓郁的花香而闻名。它是西西里岛最具代表性的葡萄品种之一。
+
+Zibibbo葡萄酒的酿造过程包括在钢桶中进行发酵，温度为14-16℃。随后进行两个月的罐陈和至少三个月的瓶陈。
+
+Zibibbo葡萄酒的颜色为明亮的金黄色，带有淡淡的绿色色调。其香气浓郁而芬芳，带有典型的橙花香气，以及柑橘类水果（柠檬、葡萄柚）和地中海植被的香气。口感清新，果味丰富，带有矿物质的味道。这是一款令人愉悦的葡萄酒，适合搭配各种菜肴，如海鲜、意大利面和披萨。
+
+以下是Zibibbo葡萄酒的简要概述：
+
+葡萄品种：Zibibbo
+酒精度：12.5% vol
+酿造方法：钢桶发酵、罐陈、瓶陈
+颜色：明亮的金黄色
+香气：浓郁的花香和柑橘类水果香气
+口感：清新，果味丰富，带有矿物质的味道</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">13.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOC</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/98.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/98.png" alt="Lighea Sicilia DOC ">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/98.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>

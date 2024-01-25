@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\common_styles.css">
+    <title>Trerose Santa Caterina Nobile di Montepulciano</title>
+</head>
+<body>
+    <a id="to homepage" class="backhome" href="..\index.html">主页</a>
+    <div id="wineryname" class="winepagesubtitle">Tre Rose(玫瑰谷酒庄)</div>
+    <div id="internationalname" class="tastetitle">Trerose Santa Caterina Nobile di Montepulciano</div>
+    <div id="chinesename" class="winepagesubtitle">圣凯特贵族红葡萄酒</div>
+    <div id="description" class="winepagetext">桑娇维塞（Sangiovese）葡萄酒是一种意大利红葡萄酒，以其浓郁的红宝石色、丰富的果香和柔和的口感而闻名。
+
+该酒的酿造方法因葡萄园的不同而有所不同，但通常包括低温发酵、轻柔压榨和橡木桶陈酿。桑娇维塞葡萄酒的酒精度通常为14% vol。
+
+
+
+桑娇维塞葡萄酒的香气浓郁而复杂，带有李子、樱桃、黑莓、草本和矿物质的气息。口感柔和，带有甜美的果味，余味悠长。
+
+桑娇维塞葡萄酒适合搭配各种肉类菜肴，如牛肉、猪肉、羊肉和野味。也可以搭配奶酪和意大利面。
+
+以下是桑娇维塞葡萄酒的简要概述：
+
+葡萄品种：桑娇维塞
+酒精度：14% vol
+酿造方法：低温发酵、轻柔压榨、橡木桶陈酿
+颜色：浓郁的红宝石色
+香气：浓郁的果香和草本香气
+口感：柔和，带有甜美的果味</div>
+    <div id="alcollevel" class="winepagesubtitle">酒精度</div>
+    <div id="alcolval" class="winepagesubtitle">14.0 %</div>
+    <div id="tier" class="winepagesubtitle">等级</div>
+    <div id="tierval" class="winepagesubtitle">DOCG</div>
+    <div id="price" class="winepagesubtitle">价格</div>
+    <div id="priceval" class="winepagesubtitle">$$$</div>
+    <div id="addgroup" class="winepagesubtitle">请在微信群里购买此商品</div>
+    <img id="qr" src="..\qrcode.png" alt="qrcode" class="qrcode">
+    <a href="..\w_pictures/95.png">
+        <img id="winepic" class="winepagewine" src="..\w_pictures/95.png" alt="Trerose Santa Caterina Nobile di Montepulciano">
+    </a>
+    <script type ="text/JavaScript">
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
+        }
+        var backhome = document.getElementById("to homepage");
+        var winery = placeunder("wineryname",backhome,5);
+        var titlew = placeunder("internationalname",winery,20);
+        var subtitle = placeunder("chinesename",titlew,10);
+        var descr =placeunder("description",subtitle,10);
+        var descrect = descr.getBoundingClientRect();
+        var bottle = placeunder("winepic",subtitle,10);
+        bottle.src = '../w_pictures/95.png';
+
+        var bottlerect = bottle.getBoundingClientRect();
+        var toptable = Math.max(descrect.top+descrect.height, bottlerect.top+bottle.offsetHeight);
+        var alc = document.getElementById("alcollevel");
+        var tier = document.getElementById("tier");
+        var price = document.getElementById("price");
+        alc.style.top=toptable+10+'px';
+        alc.style.left = '17%';
+        tier.style.top=toptable+10+'px';
+        price.style.top=toptable+10+'px';
+        price.style.right= '17%';
+        var tierval = placeunder("tierval",tier,5);
+        var alcolval = placeunder("alcolval",alc,5);
+        alcolval.style.left = '17%';
+        var priceval = placeunder("priceval",price,5);
+        priceval.style.right = '17%';
+        var groupinvite = placeunder("addgroup",tierval,20);
+        var qrcode = placeunder("qr",groupinvite,10);
+    </script>
+</body>
+</html>
