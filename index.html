@@ -156,6 +156,7 @@
         motto1.style.top = logorect.top+platlogo.offsetHeight+ 20 + 'px';
         var motto2 = placeunder("motto2",motto1,10);
         let distance_slider = 48;
+        let distance_hor = 27;
         var sweet = placeunder("sweet",motto2,distance_slider);
         var sour = placeunder("sour",sweet,distance_slider);
         var tannic = placeunder("tannic",sour,distance_slider);
@@ -164,17 +165,17 @@
         for (var ataste = 0; ataste < 5; ataste++) {
             moveslider("slider-track"+ ataste, "slider-handle"+ ataste);
         }
-        var sweet_mark = placeright("sweet-mark",sweet,distance_slider);
-        var sour_mark = placeright("sour-mark",sour,distance_slider);
-        var tannic_mark = placeright("tannic-mark",tannic,distance_slider);
-        var bodied_mark = placeright("bodied-mark",bodied,distance_slider);
-        var alcoholic_mark = placeright("alcoholic-mark",alcoholic,distance_slider);
+        var sweet_mark = placeright("sweet-mark",sweet,distance_hor);
+        var sour_mark = placeright("sour-mark",sour,distance_hor);
+        var tannic_mark = placeright("tannic-mark",tannic,distance_hor);
+        var bodied_mark = placeright("bodied-mark",bodied,distance_hor);
+        var alcoholic_mark = placeright("alcoholic-mark",alcoholic,distance_hor);
 
-        var sweet_label = placeleft("sweet-label",sweet,distance_slider);
-        var sour_label = placeleft("sour-label",sour,distance_slider);
-        var tannic_label = placeleft("tannic-label",tannic,distance_slider);
-        var bodied_label = placeleft("bodied-label",bodied,distance_slider);
-        var alcoholic_label = placeleft("alcoholic-label",alcoholic,distance_slider);
+        var sweet_label = placeleft("sweet-label",sweet,distance_hor);
+        var sour_label = placeleft("sour-label",sour,distance_hor);
+        var tannic_label = placeleft("tannic-label",tannic,distance_hor);
+        var bodied_label = placeleft("bodied-label",bodied,distance_hor);
+        var alcoholic_label = placeleft("alcoholic-label",alcoholic,distance_hor);
 
         var finder = placeunder("find!", alcoholic, distance_slider)
     </script>
