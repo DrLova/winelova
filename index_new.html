@@ -6,7 +6,7 @@
     .slider {
         position: absolute;
         width: 50%;
-        max-width: 300px;
+        max-width: 400px;
         height: 8px;
         background-color: #817f30; /* Track color */
     }
@@ -95,18 +95,16 @@
         }
         var platlogo = document.getElementById("platform_logo");
         platlogo.src = 'logo.gif';
+        var logorect = platlogo.getBoundingClientRect();
         var motto1 = document.getElementById("motto1");
-        let logorect = platlogo.getBoundingClientRect();
-        motto1.style.top = logorect.top+platlogo.offsetHeight+20 + 'px';
+        motto1.style.top = logorect.top+platlogo.offsetHeight+ 20 + 'px';
         var motto2 = placeunder("motto2",motto1,10);
-        
         let distance_slider = 48;
         var sweet = placeunder("sweet",motto2,distance_slider);
         var sour = placeunder("sour",sweet,distance_slider);
         var tannic = placeunder("tannic",sour,distance_slider);
         var bodied = placeunder("bodied",tannic,distance_slider);
         var alcoholic = placeunder("alcoholic",bodied,distance_slider);
-
         var sweet_mark = placeright("sweet-mark",sweet,distance_slider);
         var sour_mark = placeright("sour-mark",sour,distance_slider);
         var tannic_mark = placeright("tannic-mark",tannic,distance_slider);
