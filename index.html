@@ -5,37 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="common_styles.css">
     <style>
-      .slider {
-          position: absolute;
-          left: 8%;
-          width: 50%;
-          height: 7px;
-          background-color: #817f30; /* Track color */
-      }
+    .slider {
+        position: absolute;
+        width: 60%;
+        height: 8px;
+        background-color: #817f30; /* Track color */
+    }
 
-      .slider-track {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translate(0, -50%);
-          width: 100%;
-          height: 2px; /* Track height */
-          background-color: #3a0039; /* Highlight color */
-      }
+    .slider-track {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        width: 100%;
+        height: 5px; /* Track height */
+        background-color: #3a0039; /* Highlight color */
+    }
 
-      .slider-handle {
-          position: absolute;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          width: 15px;
-          height: 27px;
-          background-color: #3a0000d2; /* Handle color */
-          border-radius: 10%;
-      }
-    </style>
-    <title>search wines</title>
+    .slider-handle {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 15px;
+        height: 27px;
+        background-color: #3a0000d2; /* Handle color */
+        border-radius: 10%;
+    }
+  </style>
 </head>
 <body>
+    <img id="platform_logo" class="imglogo" src="logo.gif" alt="WINE LOVA">
+
+    <div id="motto1" class="winepagesubtitle">调整下面的五个滑块</div>
+    <div id="motto2" class="winepagesubtitle">找到你的葡萄酒的完美口感</div>
     <div id = "sweet" class="slider">
         <div id="slider-track0" class="slider-track"></div>
         <div id="slider-handle0" class="slider-handle"></div>
@@ -56,7 +58,6 @@
       <div id="slider-track4" class="slider-track"></div>
       <div id="slider-handle4" class="slider-handle"></div>
     </div>
-    <div id="fivevaluetextbox">hello</div>
 
     <a id ="sweet-mark" class="question-mark" href="sweet.html"> ? </a>
     <a id ="sour-mark" class="question-mark" href="sour.html"> ? </a>
@@ -71,106 +72,111 @@
     <div id ="alcoholic-label" class="tastelabel">酒精度</div>
 
     <a id="find!" class ="question-mark" href="underconst.html">寻找你的美酒！</a>
+
     <script type ="text/JavaScript">
-      function moveslider(sliderid, handleid) {
-        const slider = document.getElementById(sliderid);
-        const handle = document.getElementById(handleid);
-
-        let isDragging = false;
-
-        // Mouse events
-        handle.addEventListener("mousedown", (e) => {
-          isDragging = true;
-        });
-
-        document.addEventListener("mouseup", () => {
-          isDragging = false;
-        });
-
-        document.addEventListener("mousemove", (e) => {
-          if (isDragging) {
-            updateSliderPosition(e.clientX);
-          }
-        });
-
-        // Touch events
-        handle.addEventListener("touchstart", (e) => {
-          isDragging = true;
-        });
-
-        document.addEventListener("touchend", () => {
-          isDragging = false;
-        });
-
-        document.addEventListener("touchmove", (e) => {
-          if (isDragging) {
-            const touch = e.touches[0];
-            updateSliderPosition(touch.clientX);
-          }
-        });
-
-        function updateSliderPosition(clientX) {
-          const sliderRect = slider.getBoundingClientRect();
-          const handleRect = handle.getBoundingClientRect();
-
-          let newPosition = clientX - sliderRect.left - handleRect.width / 2;
-
-          // Ensure the handle stays within the slider bounds
-          if (newPosition < 0) {
-            newPosition = 0;
-          } else if (newPosition > sliderRect.width) {
-            newPosition = sliderRect.width;
-          }
-
-          handle.style.left = newPosition + "px";
+        function placeunder(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+            return tomove
         }
-      }
-
-      function retrieveposition(handleid){
-        // Assuming your object has an ID, let's say 'myObject'
-        var myObject = document.getElementById(handleid);
-        var myslider = document.querySelector('.slider')
-        // Check if the object is found
-        if (myObject) {
-            // Get the position relative to the viewport
-            var rect = myObject.getBoundingClientRect();
-            var sliderrect = myslider.getBoundingClientRect();
-            
-            return (rect.left+(rect.width/2)-sliderrect.left)/sliderrect.width;
-        } else {
-            return "object not found";
+        function placeright(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            tomove.style.left = rectangle.left + rectangle.width + offset + 'px';
+            let selfrect = tomove.getBoundingClientRect();
+            tomove.style.top = rectangle.top- selfrect.height/2 +'px';
+            return tomove
         }
-      };
-      function updateposition(textboxid, valueid) {
-        var myDiv = document.getElementById(textboxid);
-        var position = retrieveposition(valueid);
-        myDiv.textContent = position
-    }  
-      var tastes = new Array("sweet", "sour", "tannic", "bodied", "alcoholic");
-      var anheight = 10;
-      var toppad = 20;
-      for (var ataste = 0; ataste < 5; ataste++) {
-          var verticalpos = toppad + (anheight*ataste);
-          var a_slider = document.getElementById(tastes[ataste]);
-          a_slider.style.top = verticalpos+"%";
-          moveslider("slider-track"+ ataste, "slider-handle"+ ataste);
+        function placeleft(obid,anchor,offset) {
+            let tomove = document.getElementById(obid);
+            let rectangle = anchor.getBoundingClientRect();
+            let selfrect = tomove.getBoundingClientRect();
+            tomove.style.left = rectangle.left - selfrect.width - offset + 'px';
+            tomove.style.top = rectangle.top- selfrect.height/2 +'px';
+            return tomove
+        }
+        function moveslider(sliderid, handleid) {
+            const slider = document.getElementById(sliderid);
+            const handle = document.getElementById(handleid);
 
-          var questmark = document.getElementById(tastes[ataste]+"-mark");
-          questmark.style.top = verticalpos+"%";
-          var percentTop = questmark.offsetTop;
-          questmark.style.top = ((percentTop/window.innerHeight)*100)-1.5+"%"
- 
-          var tastelabel = document.getElementById(tastes[ataste]+"-label");
-          tastelabel.style.top = verticalpos+"%";
-          tastelabel.style.top = ((percentTop/window.innerHeight)*100)-1.5+"%"
+            let isDragging = false;
+
+            // Mouse events
+            handle.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            });
+
+            document.addEventListener("mouseup", () => {
+            isDragging = false;
+            });
+
+            document.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                updateSliderPosition(e.clientX);
+            }
+            });
+
+            // Touch events
+            handle.addEventListener("touchstart", (e) => {
+            isDragging = true;
+            });
+
+            document.addEventListener("touchend", () => {
+            isDragging = false;
+            });
+
+            document.addEventListener("touchmove", (e) => {
+            if (isDragging) {
+                const touch = e.touches[0];
+                updateSliderPosition(touch.clientX);
+            }
+            });
+
+            function updateSliderPosition(clientX) {
+            const sliderRect = slider.getBoundingClientRect();
+            const handleRect = handle.getBoundingClientRect();
+
+            let newPosition = clientX - sliderRect.left - handleRect.width / 2;
+
+            // Ensure the handle stays within the slider bounds
+            if (newPosition < 0) {
+                newPosition = 0;
+            } else if (newPosition > sliderRect.width) {
+                newPosition = sliderRect.width;
+            }
+
+            handle.style.left = newPosition + "px";
+            }
       }
-      var finderlink = document.getElementById("find!");
-      finderlink.style.top = toppad+(5*anheight)+"%";
-      finderlink.style.left = "8%";
+        var platlogo = document.getElementById("platform_logo");
+        platlogo.src = 'logo.gif';
+        var logorect = platlogo.getBoundingClientRect();
+        var motto1 = document.getElementById("motto1");
+        motto1.style.top = logorect.top+platlogo.offsetHeight+ 20 + 'px';
+        var motto2 = placeunder("motto2",motto1,10);
+        let distance_slider = 48;
+        var sweet = placeunder("sweet",motto2,distance_slider);
+        var sour = placeunder("sour",sweet,distance_slider);
+        var tannic = placeunder("tannic",sour,distance_slider);
+        var bodied = placeunder("bodied",tannic,distance_slider);
+        var alcoholic = placeunder("alcoholic",bodied,distance_slider);
+        for (var ataste = 0; ataste < 5; ataste++) {
+            moveslider("slider-track"+ ataste, "slider-handle"+ ataste);
+        }
+        var sweet_mark = placeright("sweet-mark",sweet,distance_slider);
+        var sour_mark = placeright("sour-mark",sour,distance_slider);
+        var tannic_mark = placeright("tannic-mark",tannic,distance_slider);
+        var bodied_mark = placeright("bodied-mark",bodied,distance_slider);
+        var alcoholic_mark = placeright("alcoholic-mark",alcoholic,distance_slider);
 
-      setInterval(() => {
-        updateposition("fivevaluetextbox","slider-handle0","sweet")
-      }, 1000);
+        var sweet_label = placeleft("sweet-label",sweet,distance_slider);
+        var sour_label = placeleft("sour-label",sour,distance_slider);
+        var tannic_label = placeleft("tannic-label",tannic,distance_slider);
+        var bodied_label = placeleft("bodied-label",bodied,distance_slider);
+        var alcoholic_label = placeleft("alcoholic-label",alcoholic,distance_slider);
+
+        var finder = placeunder("find!", alcoholic, distance_slider)
     </script>
 </body>
 </html>

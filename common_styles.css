@@ -16,13 +16,13 @@ body {
     top:2%;
     align-self: center;
     width:auto;
-    height: 50px;
+    height: 10%;
 }
 
 .tastelabel {
   position:absolute;
   font-weight: 500;
-  font-size: 27px;
+  font-size: 100%;
   color: var(--aviolet);
   font-family:sans-serif;
 }
@@ -88,7 +88,7 @@ body {
     color: var(--aviolet);
     position:absolute;
     align-self: center;
-    font-size: 20px;
+    font-size: 100%;
 }
 
 .winepagetext {
