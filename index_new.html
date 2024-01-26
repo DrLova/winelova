@@ -93,6 +93,59 @@
             tomove.style.top = rectangle.top- selfrect.height/2 +'px';
             return tomove
         }
+        function moveslider(sliderid, handleid) {
+            const slider = document.getElementById(sliderid);
+            const handle = document.getElementById(handleid);
+
+            let isDragging = false;
+
+            // Mouse events
+            handle.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            });
+
+            document.addEventListener("mouseup", () => {
+            isDragging = false;
+            });
+
+            document.addEventListener("mousemove", (e) => {
+            if (isDragging) {
+                updateSliderPosition(e.clientX);
+            }
+            });
+
+            // Touch events
+            handle.addEventListener("touchstart", (e) => {
+            isDragging = true;
+            });
+
+            document.addEventListener("touchend", () => {
+            isDragging = false;
+            });
+
+            document.addEventListener("touchmove", (e) => {
+            if (isDragging) {
+                const touch = e.touches[0];
+                updateSliderPosition(touch.clientX);
+            }
+            });
+
+            function updateSliderPosition(clientX) {
+            const sliderRect = slider.getBoundingClientRect();
+            const handleRect = handle.getBoundingClientRect();
+
+            let newPosition = clientX - sliderRect.left - handleRect.width / 2;
+
+            // Ensure the handle stays within the slider bounds
+            if (newPosition < 0) {
+                newPosition = 0;
+            } else if (newPosition > sliderRect.width) {
+                newPosition = sliderRect.width;
+            }
+
+            handle.style.left = newPosition + "px";
+            }
+      }
         var platlogo = document.getElementById("platform_logo");
         platlogo.src = 'logo.gif';
         var logorect = platlogo.getBoundingClientRect();
@@ -105,6 +158,9 @@
         var tannic = placeunder("tannic",sour,distance_slider);
         var bodied = placeunder("bodied",tannic,distance_slider);
         var alcoholic = placeunder("alcoholic",bodied,distance_slider);
+        for (var ataste = 0; ataste < 5; ataste++) {
+            moveslider("slider-track"+ ataste, "slider-handle"+ ataste);
+        }
         var sweet_mark = placeright("sweet-mark",sweet,distance_slider);
         var sour_mark = placeright("sour-mark",sour,distance_slider);
         var tannic_mark = placeright("tannic-mark",tannic,distance_slider);
