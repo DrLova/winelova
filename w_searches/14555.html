@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_styles.css">
+    <title>您的搜索结果</title>
+    <style>
+
+      .numwine {
+        position: absolute;
+        top:0%;
+        left: 5%;
+      }
+
+      .namewine{
+        position: absolute;
+        top:0%;
+        left: 15%;
+        max-width: 30%;
+        word-wrap: break-word;
+      }
+
+      .alcwine{
+        position: absolute;
+        top:0%;
+        right: 30%;
+      }
+
+      .pricewine{
+        position: absolute;
+        top:0%;
+        right: 5%;
+      }
+    </style>
+</head>
+<body>
+  <a id="to homepage" class="backhome" href="../index.html">主页</a>
+  <div id="listitle" class="tastetitle">这是我们的三款最符合您口味的葡萄酒!</div>
+
+  <div id="num0" class="numwine">n</div>
+  <a id="name0" class="namewine" >酒名</a>
+  <div id="alc0" class="alcwine">酒精 ％</div>
+  <div id="price0" class="pricewine">价格</div>
+
+  <div id="num102" class="numwine">102</div>
+  <a id="name102" class="namewine" href="../w_pages/102.html">Elegia Primitivo di Manduria Riserva DOP </a>
+  <div id="alc102" class="alcwine">15.0 %</div>
+  <div id="price102" class="pricewine">$$$</div>
+
+  <div id="num54" class="numwine">54</div>
+  <a id="name54" class="namewine" href="../w_pages/54.html">Tinazzi Lyra Malvasia nera</a>
+  <div id="alc54" class="alcwine">15.0 %</div>
+  <div id="price54" class="pricewine">$$</div>
+
+  <div id="num85" class="numwine">85</div>
+  <a id="name85" class="namewine" href="../w_pages/85.html">Vigna Castello IGT </a>
+  <div id="alc85" class="alcwine">14.0 %</div>
+  <div id="price85" class="pricewine">$$$</div>
+
+  <script type ="text/JavaScript">
+      function placeunder(obid,anchor,offset) {
+          let tomove = document.getElementById(obid);
+          let rectangle = anchor.getBoundingClientRect();
+          tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+          return tomove
+      }
+
+      function listunder(idlist,anchor,offset) {
+        let featurelist = []
+        for (var i = 0; i < idlist.length; i++) {
+          featurelist.push(placeunder(idlist[i],anchor,offset));
+        }
+        return featurelist
+      }
+      var backhome = document.getElementById("to homepage");
+      var listitle = placeunder("listitle",backhome,20);
+      var lis0 = listunder(["num0","name0","alc0","price0"],listitle,10)
+      var lis102 = listunder(["num102","name102","alc102","price102"],lis0[1],10)
+      var lis54 = listunder(["num54","name54","alc54","price54"],lis102[1],10)
+      var lis85 = listunder(["num85","name85","alc85","price85"],lis54[1],10)
+  </script>
+</body>
+</html>

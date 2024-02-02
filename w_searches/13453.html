@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_styles.css">
+    <title>您的搜索结果</title>
+    <style>
+
+      .numwine {
+        position: absolute;
+        top:0%;
+        left: 5%;
+      }
+
+      .namewine{
+        position: absolute;
+        top:0%;
+        left: 15%;
+        max-width: 30%;
+        word-wrap: break-word;
+      }
+
+      .alcwine{
+        position: absolute;
+        top:0%;
+        right: 30%;
+      }
+
+      .pricewine{
+        position: absolute;
+        top:0%;
+        right: 5%;
+      }
+    </style>
+</head>
+<body>
+  <a id="to homepage" class="backhome" href="../index.html">主页</a>
+  <div id="listitle" class="tastetitle">这是我们的三款最符合您口味的葡萄酒!</div>
+
+  <div id="num0" class="numwine">n</div>
+  <a id="name0" class="namewine" >酒名</a>
+  <div id="alc0" class="alcwine">酒精 ％</div>
+  <div id="price0" class="pricewine">价格</div>
+
+  <div id="num105" class="numwine">105</div>
+  <a id="name105" class="namewine" href="../w_pages/105.html">Chianti Classico Riserva DOCG Famiglia Zingarelli 2013 </a>
+  <div id="alc105" class="alcwine">13.5 %</div>
+  <div id="price105" class="pricewine">$$$</div>
+
+  <div id="num75" class="numwine">75</div>
+  <a id="name75" class="namewine" href="../w_pages/75.html">Marchesi di Barolo Barbera del Monferrato DOC </a>
+  <div id="alc75" class="alcwine">13.0 %</div>
+  <div id="price75" class="pricewine">$$$</div>
+
+  <div id="num81" class="numwine">81</div>
+  <a id="name81" class="namewine" href="../w_pages/81.html">Italo Cescon Cabernet</a>
+  <div id="alc81" class="alcwine">12.0 %</div>
+  <div id="price81" class="pricewine">$$$</div>
+
+  <script type ="text/JavaScript">
+      function placeunder(obid,anchor,offset) {
+          let tomove = document.getElementById(obid);
+          let rectangle = anchor.getBoundingClientRect();
+          tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+          return tomove
+      }
+
+      function listunder(idlist,anchor,offset) {
+        let featurelist = []
+        for (var i = 0; i < idlist.length; i++) {
+          featurelist.push(placeunder(idlist[i],anchor,offset));
+        }
+        return featurelist
+      }
+      var backhome = document.getElementById("to homepage");
+      var listitle = placeunder("listitle",backhome,20);
+      var lis0 = listunder(["num0","name0","alc0","price0"],listitle,10)
+      var lis105 = listunder(["num105","name105","alc105","price105"],lis0[1],10)
+      var lis75 = listunder(["num75","name75","alc75","price75"],lis105[1],10)
+      var lis81 = listunder(["num81","name81","alc81","price81"],lis75[1],10)
+  </script>
+</body>
+</html>

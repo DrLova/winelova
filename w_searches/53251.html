@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_styles.css">
+    <title>您的搜索结果</title>
+    <style>
+
+      .numwine {
+        position: absolute;
+        top:0%;
+        left: 5%;
+      }
+
+      .namewine{
+        position: absolute;
+        top:0%;
+        left: 15%;
+        max-width: 30%;
+        word-wrap: break-word;
+      }
+
+      .alcwine{
+        position: absolute;
+        top:0%;
+        right: 30%;
+      }
+
+      .pricewine{
+        position: absolute;
+        top:0%;
+        right: 5%;
+      }
+    </style>
+</head>
+<body>
+  <a id="to homepage" class="backhome" href="../index.html">主页</a>
+  <div id="listitle" class="tastetitle">这是我们的三款最符合您口味的葡萄酒!</div>
+
+  <div id="num0" class="numwine">n</div>
+  <a id="name0" class="namewine" >酒名</a>
+  <div id="alc0" class="alcwine">酒精 ％</div>
+  <div id="price0" class="pricewine">价格</div>
+
+  <div id="num5" class="numwine">5</div>
+  <a id="name5" class="namewine" href="../w_pages/5.html">Lambrusco Emilia Amabile Rosso </a>
+  <div id="alc5" class="alcwine">8.0 %</div>
+  <div id="price5" class="pricewine">$</div>
+
+  <div id="num39" class="numwine">39</div>
+  <a id="name39" class="namewine" href="../w_pages/39.html">Tramonto Moscato d'Asti DOCG</a>
+  <div id="alc39" class="alcwine">5.5 %</div>
+  <div id="price39" class="pricewine">$$</div>
+
+  <div id="num49" class="numwine">49</div>
+  <a id="name49" class="namewine" href="../w_pages/49.html">Maschio Prosecco DOC ORGANIC</a>
+  <div id="alc49" class="alcwine">11.0 %</div>
+  <div id="price49" class="pricewine">$$</div>
+
+  <script type ="text/JavaScript">
+      function placeunder(obid,anchor,offset) {
+          let tomove = document.getElementById(obid);
+          let rectangle = anchor.getBoundingClientRect();
+          tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+          return tomove
+      }
+
+      function listunder(idlist,anchor,offset) {
+        let featurelist = []
+        for (var i = 0; i < idlist.length; i++) {
+          featurelist.push(placeunder(idlist[i],anchor,offset));
+        }
+        return featurelist
+      }
+      var backhome = document.getElementById("to homepage");
+      var listitle = placeunder("listitle",backhome,20);
+      var lis0 = listunder(["num0","name0","alc0","price0"],listitle,10)
+      var lis5 = listunder(["num5","name5","alc5","price5"],lis0[1],10)
+      var lis39 = listunder(["num39","name39","alc39","price39"],lis5[1],10)
+      var lis49 = listunder(["num49","name49","alc49","price49"],lis39[1],10)
+  </script>
+</body>
+</html>

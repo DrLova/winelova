@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_styles.css">
+    <title>您的搜索结果</title>
+    <style>
+
+      .numwine {
+        position: absolute;
+        top:0%;
+        left: 5%;
+      }
+
+      .namewine{
+        position: absolute;
+        top:0%;
+        left: 15%;
+        max-width: 30%;
+        word-wrap: break-word;
+      }
+
+      .alcwine{
+        position: absolute;
+        top:0%;
+        right: 30%;
+      }
+
+      .pricewine{
+        position: absolute;
+        top:0%;
+        right: 5%;
+      }
+    </style>
+</head>
+<body>
+  <a id="to homepage" class="backhome" href="../index.html">主页</a>
+  <div id="listitle" class="tastetitle">这是我们的三款最符合您口味的葡萄酒!</div>
+
+  <div id="num0" class="numwine">n</div>
+  <a id="name0" class="namewine" >酒名</a>
+  <div id="alc0" class="alcwine">酒精 ％</div>
+  <div id="price0" class="pricewine">价格</div>
+
+  <div id="num84" class="numwine">84</div>
+  <a id="name84" class="namewine" href="../w_pages/84.html">Marchesi di Barolo Dolcetto d'Alba</a>
+  <div id="alc84" class="alcwine">13.0 %</div>
+  <div id="price84" class="pricewine">$$$</div>
+
+  <div id="num16" class="numwine">16</div>
+  <a id="name16" class="namewine" href="../w_pages/16.html">Primitivo IGT Salento La Casada</a>
+  <div id="alc16" class="alcwine">13.0 %</div>
+  <div id="price16" class="pricewine">$</div>
+
+  <div id="num7" class="numwine">7</div>
+  <a id="name7" class="namewine" href="../w_pages/7.html">Gusto </a>
+  <div id="alc7" class="alcwine">12.5 %</div>
+  <div id="price7" class="pricewine">$</div>
+
+  <script type ="text/JavaScript">
+      function placeunder(obid,anchor,offset) {
+          let tomove = document.getElementById(obid);
+          let rectangle = anchor.getBoundingClientRect();
+          tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+          return tomove
+      }
+
+      function listunder(idlist,anchor,offset) {
+        let featurelist = []
+        for (var i = 0; i < idlist.length; i++) {
+          featurelist.push(placeunder(idlist[i],anchor,offset));
+        }
+        return featurelist
+      }
+      var backhome = document.getElementById("to homepage");
+      var listitle = placeunder("listitle",backhome,20);
+      var lis0 = listunder(["num0","name0","alc0","price0"],listitle,10)
+      var lis84 = listunder(["num84","name84","alc84","price84"],lis0[1],10)
+      var lis16 = listunder(["num16","name16","alc16","price16"],lis84[1],10)
+      var lis7 = listunder(["num7","name7","alc7","price7"],lis16[1],10)
+  </script>
+</body>
+</html>

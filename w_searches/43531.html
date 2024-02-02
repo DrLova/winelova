@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_styles.css">
+    <title>您的搜索结果</title>
+    <style>
+
+      .numwine {
+        position: absolute;
+        top:0%;
+        left: 5%;
+      }
+
+      .namewine{
+        position: absolute;
+        top:0%;
+        left: 15%;
+        max-width: 30%;
+        word-wrap: break-word;
+      }
+
+      .alcwine{
+        position: absolute;
+        top:0%;
+        right: 30%;
+      }
+
+      .pricewine{
+        position: absolute;
+        top:0%;
+        right: 5%;
+      }
+    </style>
+</head>
+<body>
+  <a id="to homepage" class="backhome" href="../index.html">主页</a>
+  <div id="listitle" class="tastetitle">这是我们的三款最符合您口味的葡萄酒!</div>
+
+  <div id="num0" class="numwine">n</div>
+  <a id="name0" class="namewine" >酒名</a>
+  <div id="alc0" class="alcwine">酒精 ％</div>
+  <div id="price0" class="pricewine">价格</div>
+
+  <div id="num1" class="numwine">1</div>
+  <a id="name1" class="namewine" href="../w_pages/1.html">Infinito </a>
+  <div id="alc1" class="alcwine">11.5 %</div>
+  <div id="price1" class="pricewine">$</div>
+
+  <div id="num34" class="numwine">34</div>
+  <a id="name34" class="namewine" href="../w_pages/34.html">Anthìlia Sicilia DOC </a>
+  <div id="alc34" class="alcwine">12.5 %</div>
+  <div id="price34" class="pricewine">$$</div>
+
+  <div id="num82" class="numwine">82</div>
+  <a id="name82" class="namewine" href="../w_pages/82.html">Merlot Piave DOC</a>
+  <div id="alc82" class="alcwine">12.5 %</div>
+  <div id="price82" class="pricewine">$$$</div>
+
+  <script type ="text/JavaScript">
+      function placeunder(obid,anchor,offset) {
+          let tomove = document.getElementById(obid);
+          let rectangle = anchor.getBoundingClientRect();
+          tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+          return tomove
+      }
+
+      function listunder(idlist,anchor,offset) {
+        let featurelist = []
+        for (var i = 0; i < idlist.length; i++) {
+          featurelist.push(placeunder(idlist[i],anchor,offset));
+        }
+        return featurelist
+      }
+      var backhome = document.getElementById("to homepage");
+      var listitle = placeunder("listitle",backhome,20);
+      var lis0 = listunder(["num0","name0","alc0","price0"],listitle,10)
+      var lis1 = listunder(["num1","name1","alc1","price1"],lis0[1],10)
+      var lis34 = listunder(["num34","name34","alc34","price34"],lis1[1],10)
+      var lis82 = listunder(["num82","name82","alc82","price82"],lis34[1],10)
+  </script>
+</body>
+</html>

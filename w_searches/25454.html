@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../common_styles.css">
+    <title>您的搜索结果</title>
+    <style>
+
+      .numwine {
+        position: absolute;
+        top:0%;
+        left: 5%;
+      }
+
+      .namewine{
+        position: absolute;
+        top:0%;
+        left: 15%;
+        max-width: 30%;
+        word-wrap: break-word;
+      }
+
+      .alcwine{
+        position: absolute;
+        top:0%;
+        right: 30%;
+      }
+
+      .pricewine{
+        position: absolute;
+        top:0%;
+        right: 5%;
+      }
+    </style>
+</head>
+<body>
+  <a id="to homepage" class="backhome" href="../index.html">主页</a>
+  <div id="listitle" class="tastetitle">这是我们的三款最符合您口味的葡萄酒!</div>
+
+  <div id="num0" class="numwine">n</div>
+  <a id="name0" class="namewine" >酒名</a>
+  <div id="alc0" class="alcwine">酒精 ％</div>
+  <div id="price0" class="pricewine">价格</div>
+
+  <div id="num52" class="numwine">52</div>
+  <a id="name52" class="namewine" href="../w_pages/52.html">Teatro Governo all'uso toscano</a>
+  <div id="alc52" class="alcwine">13.5 %</div>
+  <div id="price52" class="pricewine">$$</div>
+
+  <div id="num104" class="numwine">104</div>
+  <a id="name104" class="namewine" href="../w_pages/104.html">Ca' maiol Negresco</a>
+  <div id="alc104" class="alcwine">14.0 %</div>
+  <div id="price104" class="pricewine">$$$</div>
+
+  <div id="num59" class="numwine">59</div>
+  <a id="name59" class="namewine" href="../w_pages/59.html">Rocca delle Macie Sasyr Toscana IGT</a>
+  <div id="alc59" class="alcwine">13.5 %</div>
+  <div id="price59" class="pricewine">$$</div>
+
+  <script type ="text/JavaScript">
+      function placeunder(obid,anchor,offset) {
+          let tomove = document.getElementById(obid);
+          let rectangle = anchor.getBoundingClientRect();
+          tomove.style.top= rectangle.top + rectangle.height + offset + 'px';
+          return tomove
+      }
+
+      function listunder(idlist,anchor,offset) {
+        let featurelist = []
+        for (var i = 0; i < idlist.length; i++) {
+          featurelist.push(placeunder(idlist[i],anchor,offset));
+        }
+        return featurelist
+      }
+      var backhome = document.getElementById("to homepage");
+      var listitle = placeunder("listitle",backhome,20);
+      var lis0 = listunder(["num0","name0","alc0","price0"],listitle,10)
+      var lis52 = listunder(["num52","name52","alc52","price52"],lis0[1],10)
+      var lis104 = listunder(["num104","name104","alc104","price104"],lis52[1],10)
+      var lis59 = listunder(["num59","name59","alc59","price59"],lis104[1],10)
+  </script>
+</body>
+</html>
