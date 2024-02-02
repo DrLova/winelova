@@ -37,7 +37,7 @@
     <img id="platform_logo" class="imglogo" src="logo.gif" alt="WINE LOVA">
 
     <div id="motto1" class="winepagesubtitle">调整下面的五个滑块</div>
-    <div id="motto2" class="winepagesubtitle">找到你的葡萄酒的完美口感</div>
+    <div id="motto2" class="winepagesubtitle">找到您的葡萄酒的完美口感</div>
     <div id = "sweet" class="slider">
         <div id="slider-track0" class="slider-track"></div>
         <div id="slider-handle0" class="slider-handle"></div>
@@ -71,7 +71,8 @@
     <div id ="bodied-label" class="tastelabel">酒体感</div>
     <div id ="alcoholic-label" class="tastelabel">酒精度</div>
 
-    <a id="find!" class ="question-mark" href="underconst.html">寻找你的美酒！</a>
+    <a id="find!" class ="question-mark" href="w_searches/11111.html">寻找您的美酒！</a>
+    <a id="list" class ="question-mark" href="list.html">阅读我们的葡萄酒清单</a>
 
     <script type ="text/JavaScript">
         function placeunder(obid,anchor,offset) {
@@ -96,9 +97,9 @@
             tomove.style.top = rectangle.top- selfrect.height/2 +'px';
             return tomove
         }
-        function moveslider(sliderid, handleid) {
-            const slider = document.getElementById(sliderid);
-            const handle = document.getElementById(handleid);
+        function moveslider(sliders, finder, position) {
+            const slider = document.getElementById("slider-track"+ position);
+            const handle = document.getElementById("slider-handle"+ position);
 
             let isDragging = false;
 
@@ -114,6 +115,7 @@
             document.addEventListener("mousemove", (e) => {
             if (isDragging) {
                 updateSliderPosition(e.clientX);
+                retrieveposition(finder,sliders,position)
             }
             });
 
@@ -130,13 +132,13 @@
             if (isDragging) {
                 const touch = e.touches[0];
                 updateSliderPosition(touch.clientX);
+                retrieveposition(finder,sliders,position)
             }
             });
 
             function updateSliderPosition(clientX) {
             const sliderRect = slider.getBoundingClientRect();
             const handleRect = handle.getBoundingClientRect();
-
             let newPosition = clientX - sliderRect.left - handleRect.width / 2;
 
             // Ensure the handle stays within the slider bounds
@@ -148,7 +150,28 @@
 
             handle.style.left = newPosition + "px";
             }
-      }
+        }
+
+        function retrieveposition(finder,sliders,position){
+            // Assuming your object has an ID, let's say 'myObject'
+            let myObject = document.getElementById("slider-handle"+ position);
+            let myslider = document.querySelector('.slider')
+            // Check if the object is found
+            if (myObject) {
+                // Get the position relative to the viewport
+                let rect = myObject.getBoundingClientRect();
+                let sliderrect = myslider.getBoundingClientRect();
+                let outval = (rect.left+(rect.width/2)-sliderrect.left)/sliderrect.width;
+                sliders[position] = Math.round(outval*4)+1;
+                console.log(sliders);
+                finder.href = "w_searches/"+sliders[0].toString()+sliders[1].toString()+sliders[2].toString()+sliders[3].toString()+sliders[4].toString()+".html";
+                return outval;
+            } else {
+                return "object not found";
+            }
+        }
+
+        var sliders = new Array(1,1,1,1,1)
         var platlogo = document.getElementById("platform_logo");
         platlogo.src = 'logo.gif';
         var logorect = platlogo.getBoundingClientRect();
@@ -162,8 +185,10 @@
         var tannic = placeunder("tannic",sour,distance_slider);
         var bodied = placeunder("bodied",tannic,distance_slider);
         var alcoholic = placeunder("alcoholic",bodied,distance_slider);
+        var finder = placeunder("find!", alcoholic, distance_slider)
+        var lister = placeunder("list", finder, distance_slider)
         for (var ataste = 0; ataste < 5; ataste++) {
-            moveslider("slider-track"+ ataste, "slider-handle"+ ataste);
+            moveslider(sliders,finder,ataste);
         }
         var sweet_mark = placeright("sweet-mark",sweet,distance_hor);
         var sour_mark = placeright("sour-mark",sour,distance_hor);
@@ -176,8 +201,6 @@
         var tannic_label = placeleft("tannic-label",tannic,distance_hor);
         var bodied_label = placeleft("bodied-label",bodied,distance_hor);
         var alcoholic_label = placeleft("alcoholic-label",alcoholic,distance_hor);
-
-        var finder = placeunder("find!", alcoholic, distance_slider)
     </script>
 </body>
 </html>
