@@ -77,6 +77,13 @@ body {
     right: 5%;
 }
 
+.winepagescheme {
+    position: absolute;
+    align-self: center;
+    height: 15%;
+    width: auto;
+}
+
 .qrcode {
     position:absolute;
     max-width: 30%;
