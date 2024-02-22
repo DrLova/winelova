@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Ca' Maiol(卡玛奥酒庄)</div>
     <div id="internationalname" class="tastetitle">Ca' maiol Negresco</div>
     <div id="chinesename" class="winepagesubtitle">卡玛奥尼斯科红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/104.gif" alt="Ca' maiol Negresco">
     <div id="description" class="winepagetext">来自意大利加尔达湖畔的纯正红葡萄品种（包括马尔泽米诺、桑娇维塞、格罗佩洛和巴贝拉）酿造了这款迷人的佳酿。14%的酒精度赋予其强劲而优雅的个性。
 
 葡萄的混酿、独特的成分、部分葡萄的干燥、特别的萃取发酵以及在法国橡木桶中陈酿一年以上，塑造了这款葡萄酒丰富的香气和味道，既欢快又精致，令人心醉。
@@ -43,9 +44,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/104.png';
 
         var bottlerect = bottle.getBoundingClientRect();

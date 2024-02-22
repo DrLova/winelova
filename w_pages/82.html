@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Italo Cescon(凯斯顿酒庄 )</div>
     <div id="internationalname" class="tastetitle">Merlot Piave DOC</div>
     <div id="chinesename" class="winepagesubtitle"> 凯斯顿梅洛红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/82.gif" alt="Merlot Piave DOC">
     <div id="description" class="winepagetext">这款红葡萄酒采用Merlot品种酿造，酒精含量为13% Vol。葡萄经过人工采摘，进行2/3天的预发酵浸渍，然后进行为期10天的传统浸渍。酒精发酵温度在21/22℃之间进行控制，苹果酸乳酸发酵完全完成。经过搅拌后，在橡木桶中陈酿9个月，随后在瓶中再陈4个月。酒的颜色呈深红宝石色。香气复杂而独特，带有水果和木质的氛围，散发着软果香、香辛、烟草和巧克力的香气。口感和谐，细腻的单宁和清新感为口腔带来了樱桃、黑加仑和甘草的丰富层次，以柔和圆润的结束为收尾。</div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
     <div id="alcolval" class="winepagesubtitle">12.5 %</div>
@@ -34,9 +35,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/82.png';
 
         var bottlerect = bottle.getBoundingClientRect();

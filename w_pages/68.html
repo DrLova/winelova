@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Tinazzi(蒂纳兹酒庄)</div>
     <div id="internationalname" class="tastetitle">Vinum Italicum Rosso Veronese IGT </div>
     <div id="chinesename" class="winepagesubtitle">蒂纳兹维罗纳红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/68.gif" alt="Vinum Italicum Rosso Veronese IGT ">
     <div id="description" class="winepagetext">这款葡萄酒由意大利威尼托产区的科维纳葡萄酿造而成。科维纳是威尼托产区最主要的红葡萄品种之一，通常用于酿造阿马罗内（Amarone）等浓郁的红葡萄酒。
 
 葡萄酒呈现出深红宝石色，颜色浓郁。香气浓郁，充满了成熟的红色水果，如樱桃、李子、黑莓等，并伴有淡淡的香料和可可的香气。口感饱满，单宁柔顺，带有果香和甘草的余味。
@@ -50,9 +51,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/68.png';
 
         var bottlerect = bottle.getBoundingClientRect();

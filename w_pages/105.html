@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Rocca delle Macie(罗卡马契酒庄 )</div>
     <div id="internationalname" class="tastetitle">Chianti Classico Riserva DOCG Famiglia Zingarelli 2013 </div>
     <div id="chinesename" class="winepagesubtitle">津加雷利经典基安蒂珍藏红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/105.gif" alt="Chianti Classico Riserva DOCG Famiglia Zingarelli 2013 ">
     <div id="description" class="winepagetext">由经典的三大紅葡萄品種釀造的這款佳釀，散發著令人難以抗拒的魅力。它融合了桑嬌維塞(Sangiovese)、卡本內蘇維濃(Cabernet Sauvignon)和梅洛(Merlot)的特性，酒精含量14%，赋予其强劲而优雅的个性。
 
 经过精心挑选的葡萄，采用傳統基安蒂古典產區的酿造方法，并在法国橡木桶中陈酿两年，然后瓶中至少陈酿三个月，进一步提升其复杂性和优雅性。
@@ -43,9 +44,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/105.png';
 
         var bottlerect = bottle.getBoundingClientRect();

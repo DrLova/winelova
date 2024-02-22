@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Val di Suga(维尔德苏嘉酒庄)</div>
     <div id="internationalname" class="tastetitle">Val di Suga Rosso di Montalcino</div>
     <div id="chinesename" class="winepagesubtitle">苏嘉山谷蒙塔奇诺红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/103.gif" alt="Val di Suga Rosso di Montalcino">
     <div id="description" class="winepagetext">來自托斯卡納的經典桑嬌維塞(Sangiovese)葡萄釀造，散發著迷人魅力。13.5%的酒精度，賦予其優雅的個性。
 
 葡萄采摘后，在150升不锈钢罐中发酵，带果皮浸渍15天，温度控制在30℃以下。随后在斯拉夫橡木桶中陈酿6个月，再瓶中陈酿至少3个月。
@@ -43,9 +44,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/103.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Terre della Custodia(守护者酒庄)</div>
     <div id="internationalname" class="tastetitle">Sagrantino di Montefalco DOCG </div>
     <div id="chinesename" class="winepagesubtitle">守护者萨格朗蒂诺红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/111.gif" alt="Sagrantino di Montefalco DOCG ">
     <div id="description" class="winepagetext">萨格拉蒂诺(Sagrantino)葡萄酿造了这款迷人的佳酿，散发着令人沉醉的魅力。14.5%的酒精度赋予其强劲优雅的个性。
 
 葡萄汁在不锈钢罐中与精选酵母一起发酵，赋予其独特的风味。
@@ -43,9 +44,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/111.png';
 
         var bottlerect = bottle.getBoundingClientRect();

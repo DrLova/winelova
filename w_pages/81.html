@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Italo Cescon(凯斯顿酒庄 )</div>
     <div id="internationalname" class="tastetitle">Italo Cescon Cabernet</div>
     <div id="chinesename" class="winepagesubtitle">凯斯顿红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/81.gif" alt="Italo Cescon Cabernet">
     <div id="description" class="winepagetext">这款红葡萄酒采用Cabernet Sauvignon和Cabernet Franc品种酿造，酒精含量为13% Vol。葡萄经过人工采摘，首先进行压榨和去梗，然后进行4/5天的冷预发酵浸渍。随后，在最高28℃的控制温度下进行20天的乙醇和苹果酸乳酸发酵。经过搅拌后，酒在橡木桶中陈酿9个月，随后在瓶中再陈6个月。酒的颜色呈深红宝石色，带有紫色的暗示。香气浓烈而复杂，富有魅力，带有软果香，同时还有香辛和草本的氛围。口感干燥，具有良好的浓度，清晰的果味和香草的余韵</div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
     <div id="alcolval" class="winepagesubtitle">12.0 %</div>
@@ -34,9 +35,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/81.png';
 
         var bottlerect = bottle.getBoundingClientRect();

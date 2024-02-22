@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Rocca delle Macie(罗卡马契酒庄 )</div>
     <div id="internationalname" class="tastetitle">Chianti Classico DOCG Famiglia Zingarelli </div>
     <div id="chinesename" class="winepagesubtitle">津加雷利经典基安蒂红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/76.gif" alt="Chianti Classico DOCG Famiglia Zingarelli ">
     <div id="description" class="winepagetext">葡萄品种：桑娇维塞、梅洛
 
 酒精含量：13.5%
@@ -62,9 +63,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/76.png';
 
         var bottlerect = bottle.getBoundingClientRect();

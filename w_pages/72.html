@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Italo Cescon(凯斯顿酒庄 )</div>
     <div id="internationalname" class="tastetitle">Pinot Grigio Friuli Grave DOC </div>
     <div id="chinesename" class="winepagesubtitle">凯斯顿灰皮诺白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/72.gif" alt="Pinot Grigio Friuli Grave DOC ">
     <div id="description" class="winepagetext">
 这款白葡萄酒采用Chardonnay品种酿造，酒精含量为12.5% Vol。葡萄经过人工采摘，压榨和去梗后，温和的压榨得到50%的榨汁。在控制温度为13℃的条件下进行15天的酒精发酵。发酵结束后，进行5/6个月的母液陈酿，经过澄清和过滤后，再经过3个月的瓶陈。酒的颜色呈素净的淡稻草黄色。香气浓郁而优雅，带有桃子和柑橘的果香，以及肉豆蔻的香辛调。口感干爽而清新，凸显出果味和果酱的风味，橙子皮的氛围贯穿其中；与脆爽的特性搭配得当，圆润的口感在口腔中留下完美的平衡。</div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
@@ -35,9 +36,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/72.png';
 
         var bottlerect = bottle.getBoundingClientRect();

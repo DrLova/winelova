@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Borgogno(博格诺酒庄)</div>
     <div id="internationalname" class="tastetitle">Borgogno Barbera d'alba doc</div>
     <div id="chinesename" class="winepagesubtitle">Borgogno Barbera d'alba doc</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/100.gif" alt="Borgogno Barbera d'alba doc">
     <div id="description" class="winepagetext">巴贝拉（Barbera）葡萄酒是一种意大利红葡萄酒，以其浓郁的红宝石色、浓郁的果香和花香以及干爽的口感而闻名。
 
 该酒的酿造过程包括低温发酵（24-28°C）、轻柔压榨、70%在钢桶中陈酿10个月和30%在斯拉沃尼亚橡木桶中陈酿10个月。这种经典的酿造方法可以保留葡萄的酸度和果香，使葡萄酒具有易饮、芬芳和典雅的特点。
@@ -49,9 +50,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/100.png';
 
         var bottlerect = bottle.getBoundingClientRect();

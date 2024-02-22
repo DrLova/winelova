@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
     <div id="internationalname" class="tastetitle">Vigna Castello IGT </div>
     <div id="chinesename" class="winepagesubtitle">维尼亚城堡红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/85.gif" alt="Vigna Castello IGT ">
     <div id="description" class="winepagetext">这款葡萄酒由黑曼罗和苏苏曼尼耶洛葡萄混酿而成，酒精度为14%。葡萄于9月底手工采摘。去梗和轻柔破碎后，在恒温控制的钢桶中进行发酵，发酵时间为15-20天。酒精发酵结束后，进行自然乳酸发酵。在橡木桶中陈酿12个月，瓶陈6个月。
 
 这款葡萄酒呈现深红色，带有紫色反光。香气优雅、复杂、浓郁、持久，带有黑莓、黑加仑、香料和草本植物的香气。口感平衡、丰富、果味浓郁、结构良好，单宁紧实。
@@ -53,9 +54,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/85.png';
 
         var bottlerect = bottle.getBoundingClientRect();

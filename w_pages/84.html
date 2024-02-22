@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Marchesi di Barolo(巴罗洛侯爵酒庄)</div>
     <div id="internationalname" class="tastetitle">Marchesi di Barolo Dolcetto d'Alba</div>
     <div id="chinesename" class="winepagesubtitle">巴罗洛侯爵庄园多赛托红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/84.gif" alt="Marchesi di Barolo Dolcetto d'Alba">
     <div id="description" class="winepagetext">这款葡萄酒采用多塞托葡萄酿制而成，酒精度为13%。葡萄采摘后立即送往酒窖，进行去梗和轻柔的破碎。酒精发酵在28-30℃的温度下进行，浸渍时间约为4天。在葡萄酒完全成熟之前，将其转移到另一个容器中，在低温下继续发酵，以突出其果香。
 
 这款葡萄酒呈现深红色，带有紫色反光。香气清新、芬芳、果香浓郁，带有明显的马拉斯克葡萄干香气。口感干爽、协调，酸度较低。
@@ -52,9 +53,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/84.png';
 
         var bottlerect = bottle.getBoundingClientRect();

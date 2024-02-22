@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Donnafugata(多娜佳塔酒庄 )</div>
     <div id="internationalname" class="tastetitle">Bell'Assai Frappato DOC </div>
     <div id="chinesename" class="winepagesubtitle">多娜佳塔贝乐赛红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/96.gif" alt="Bell'Assai Frappato DOC ">
     <div id="description" class="winepagetext">弗拉帕托（Frappato）是一种意大利红葡萄酒，以其明亮的红宝石色、浓郁的果香和清新的口感而闻名。
 
 该酒的酿造过程包括在不锈钢罐中进行发酵和浸皮，持续约8-9天，温度为24-25℃。随后进行4个月的罐陈和3个月的瓶陈。
@@ -47,9 +48,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/96.png';
 
         var bottlerect = bottle.getBoundingClientRect();

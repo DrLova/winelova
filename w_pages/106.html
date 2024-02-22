@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Masseria Doppio Passo(玛斯利多宝酒庄)</div>
     <div id="internationalname" class="tastetitle">Cuvee' 16</div>
     <div id="chinesename" class="winepagesubtitle"> 玛斯利多宝特酿红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/106.gif" alt="Cuvee' 16">
     <div id="description" class="winepagetext">黑暗女王内格罗阿玛罗(Negroamaro)和原始魅力普里米蒂沃(Primitivo)葡萄完美融合，打造出这款浓郁醇厚的佳酿，16%的酒精度赋予其强劲个性。
 
 葡萄在葡萄园中自然风干，枝条剪断后，果实留在藤蔓上25-30天。在这漫长的成熟过程中，葡萄会失去40%的重量，但糖分和花青素的浓度会增加，为酒体奠定坚实基础。采摘后，葡萄经手工压榨，开始发酵。果皮会在发酵过程中与果肉一起浸渍，萃取浓郁的香气和色泽。
@@ -43,9 +44,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/106.png';
 
         var bottlerect = bottle.getBoundingClientRect();

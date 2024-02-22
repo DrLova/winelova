@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Donnafugata(多娜佳塔酒庄 )</div>
     <div id="internationalname" class="tastetitle">Sherazade Nero d’Avola Sicilia DOC </div>
     <div id="chinesename" class="winepagesubtitle">多娜佳塔东方公主红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/99.gif" alt="Sherazade Nero d’Avola Sicilia DOC ">
     <div id="description" class="winepagetext">黑珍珠（Nero d'Avola）是一种意大利红葡萄品种，以其浓郁的果香、强劲的酒体和优雅的口感而闻名。它是西西里岛最具代表性的葡萄品种之一。
 
 黑珍珠葡萄酒的酿造过程包括在不锈钢罐中进行发酵和浸皮，持续约6-8天，温度为24-25℃。随后进行4个月的罐陈和至少3个月的瓶陈。
@@ -47,9 +48,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/99.png';
 
         var bottlerect = bottle.getBoundingClientRect();

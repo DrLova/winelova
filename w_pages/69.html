@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Masseria Doppio Passo(玛斯利多宝酒庄)</div>
     <div id="internationalname" class="tastetitle">Masseria Doppio Passo ZINFANDEL </div>
     <div id="chinesename" class="winepagesubtitle">玛斯利多宝仙粉黛红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/69.gif" alt="Masseria Doppio Passo ZINFANDEL ">
     <div id="description" class="winepagetext">这款仙粉黛葡萄酒由美国加利福尼亚州的仙粉黛葡萄酿造而成。仙粉黛是加利福尼亚州最受欢迎的红葡萄品种之一，通常用于酿造丰满、浓郁的红葡萄酒。
 
 葡萄酒呈现出深紫色，颜色浓郁。香气浓郁，充满了成熟的黑色水果，如黑莓、黑加仑、李子等，并伴有淡淡的香料和巧克力的香气。口感饱满，单宁柔顺，酸度适中，具有良好的结构。
@@ -50,9 +51,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/69.png';
 
         var bottlerect = bottle.getBoundingClientRect();

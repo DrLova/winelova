@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Italo Cescon(凯斯顿酒庄 )</div>
     <div id="internationalname" class="tastetitle">Riesling Veneto IGT </div>
     <div id="chinesename" class="winepagesubtitle">凯斯顿雷司令白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/73.gif" alt="Riesling Veneto IGT ">
     <div id="description" class="winepagetext">葡萄品种：霞多丽
 
 酒精含量：12.5%
@@ -59,9 +60,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/73.png';
 
         var bottlerect = bottle.getBoundingClientRect();

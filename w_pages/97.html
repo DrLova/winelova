@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Donnafugata(多娜佳塔酒庄 )</div>
     <div id="internationalname" class="tastetitle">Floramundi Cerasuolo di Vittoria DOCG</div>
     <div id="chinesename" class="winepagesubtitle">多娜佳塔弗拉蒙迪红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/97.gif" alt="Floramundi Cerasuolo di Vittoria DOCG">
     <div id="description" class="winepagetext">弗拉帕托（Frappato）和黑珍珠（Nero d'Avola）是西西里岛最具代表性的葡萄品种之一。它们经常被混合在一起酿造出一种名为Cerasuolo di Vittoria的DOCG葡萄酒。
 
 Cerasuolo di Vittoria是一种具有鲜明特色的葡萄酒，以其明亮的红宝石色、浓郁的果香和清爽的口感而闻名。
@@ -49,9 +50,10 @@ Cerasuolo di Vittoria葡萄酒的香气浓郁而芬芳，带有成熟的红色�
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/97.png';
 
         var bottlerect = bottle.getBoundingClientRect();

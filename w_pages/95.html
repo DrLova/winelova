@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Tre Rose(玫瑰谷酒庄)</div>
     <div id="internationalname" class="tastetitle">Trerose Santa Caterina Nobile di Montepulciano</div>
     <div id="chinesename" class="winepagesubtitle">圣凯特贵族红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/95.gif" alt="Trerose Santa Caterina Nobile di Montepulciano">
     <div id="description" class="winepagetext">桑娇维塞（Sangiovese）葡萄酒是一种意大利红葡萄酒，以其浓郁的红宝石色、丰富的果香和柔和的口感而闻名。
 
 该酒的酿造方法因葡萄园的不同而有所不同，但通常包括低温发酵、轻柔压榨和橡木桶陈酿。桑娇维塞葡萄酒的酒精度通常为14% vol。
@@ -51,9 +52,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/95.png';
 
         var bottlerect = bottle.getBoundingClientRect();

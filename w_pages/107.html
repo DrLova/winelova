@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Tenute Girolamo(吉罗拉莫酒庄)</div>
     <div id="internationalname" class="tastetitle">Conte Giangirolamo Igp Puglia</div>
     <div id="chinesename" class="winepagesubtitle">Conte Giangirolamo Igp Puglia</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/107.gif" alt="Conte Giangirolamo Igp Puglia">
     <div id="description" class="winepagetext">原始魅力普里米蒂沃(Primitivo)和黑暗女王内格罗阿玛罗(Negroamaro)葡萄完美融合，酿造出這款强劲优雅的佳酿，14.5%的酒精度赋予其令人难忘的个性。葡萄经过橡木桶浸渍，并在法国橡木桶中陈酿22/24个月，随后瓶中陈酿6个月，赋予其复杂而细腻的香气和口感。酒体呈现浓郁的宝石红，泛着迷人的紫罗兰色调。香气馥郁，果香四溢，樱桃、黑莓、黑醋栗的芬芳萦绕鼻尖，优雅的香料气息与香草和巧克力的甜蜜交织，令人陶醉。入口干爽，酒体饱满，和谐悠长，单宁适中，完美呼应丰富优雅的香气。这是一款值得细细品味、令人印象深刻的佳酿，非常适合搭配红肉、烤肉和野味，也是奶酪爱好者的绝佳选择。
 </div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
@@ -35,9 +36,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/107.png';
 
         var bottlerect = bottle.getBoundingClientRect();

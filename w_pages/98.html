@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Donnafugata(多娜佳塔酒庄 )</div>
     <div id="internationalname" class="tastetitle">Lighea Sicilia DOC </div>
     <div id="chinesename" class="winepagesubtitle">多娜佳塔莱伊亚白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/98.gif" alt="Lighea Sicilia DOC ">
     <div id="description" class="winepagetext">Zibibbo 是一种意大利白葡萄品种，以其清新的口感和浓郁的花香而闻名。它是西西里岛最具代表性的葡萄品种之一。
 
 Zibibbo葡萄酒的酿造过程包括在钢桶中进行发酵，温度为14-16℃。随后进行两个月的罐陈和至少三个月的瓶陈。
@@ -47,9 +48,10 @@ Zibibbo葡萄酒的颜色为明亮的金黄色，带有淡淡的绿色色调。�
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/98.png';
 
         var bottlerect = bottle.getBoundingClientRect();

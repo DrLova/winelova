@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Tre Rose(玫瑰谷酒庄)</div>
     <div id="internationalname" class="tastetitle">Trerose Salterio Rosso di Montepulciano DOC </div>
     <div id="chinesename" class="winepagesubtitle">蒙特盐田红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/86.gif" alt="Trerose Salterio Rosso di Montepulciano DOC ">
     <div id="description" class="winepagetext">葡萄品种：桑娇维塞、赤霞珠、梅洛
 酒精度：13.5%
 酿造：在不锈钢罐中发酵，浸渍10天，温度控制在18-28℃之间，然后在55升法国橡木桶和栗木桶中陈酿数月。
@@ -42,9 +43,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/86.png';
 
         var bottlerect = bottle.getBoundingClientRect();

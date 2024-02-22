@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Donnafugata(多娜佳塔酒庄 )</div>
     <div id="internationalname" class="tastetitle">Sul Vulcano Etna Rosso DOC </div>
     <div id="chinesename" class="winepagesubtitle">多娜佳塔埃特纳红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/112.gif" alt="Sul Vulcano Etna Rosso DOC ">
     <div id="description" class="winepagetext">内罗马斯卡利西 (Nerello Mascalese) 葡萄酿造了这款迷人的佳酿，散发着优雅而细腻的魅力。13.5% 的酒精度赋予其轻盈宜人的个性。
 
 葡萄经过严格的挑选，并在不锈钢罐中发酵，果皮浸渍 8-10 天，温度控制在 25°C。随后部分陈酿于不锈钢罐中，部分陈酿于法国橡木桶 (二三新桶) 中 14 个月，然后在瓶中至少陈酿 7 个月。
@@ -43,9 +44,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/112.png';
 
         var bottlerect = bottle.getBoundingClientRect();

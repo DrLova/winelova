@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Bertani(贝塔尼酒庄)</div>
     <div id="internationalname" class="tastetitle">Soave DOC Vintage Edition</div>
     <div id="chinesename" class="winepagesubtitle">贝塔尼索阿韦年份版干白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/91.gif" alt="Soave DOC Vintage Edition">
     <div id="description" class="winepagetext">佳娜佳白葡萄酒
 
 葡萄品种：佳娜佳
@@ -44,9 +45,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/91.png';
 
         var bottlerect = bottle.getBoundingClientRect();
