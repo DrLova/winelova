@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Botter(波特酒庄)</div>
     <div id="internationalname" class="tastetitle">Botter Ricetta Rosso veneto igt </div>
     <div id="chinesename" class="winepagesubtitle">乔索红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/40.gif" alt="Botter Ricetta Rosso veneto igt ">
     <div id="description" class="winepagetext">这是一款令人惊叹的 Corvina 红葡萄酒，散发出迷人的深紫色光泽，陈年后会呈现琥珀色调，仿佛一颗璀璨的宝石在杯中熠熠生辉。
 
 来自维罗纳的传统工艺: 葡萄采摘分为两个阶段，第一阶段在9月初，第二阶段在10月中旬，这款葡萄酒正是来自10月中旬采摘的 Corvina 葡萄，酿造过程中採用傳統红葡萄酒釀造工艺，在25-27°C的控温条件下发酵，葡萄皮长时间浸渍在葡萄汁中，萃取出丰富的风味和迷人的红色。随后在橡木桶中陈酿3-4个月，赋予葡萄酒愉悦的香料和香草气息。
@@ -45,9 +46,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/40.png';
 
         var bottlerect = bottle.getBoundingClientRect();

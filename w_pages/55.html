@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">St. Micheal Eppan(圣米凯酒庄)</div>
     <div id="internationalname" class="tastetitle">Lahn Sauvignon</div>
     <div id="chinesename" class="winepagesubtitle">圣米凯酒庄长相思白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/55.gif" alt="Lahn Sauvignon">
     <div id="description" class="winepagetext">
 白苏维浓是一种产自世界各地的白葡萄酒。它由白苏维浓葡萄酿造而成，该葡萄品种以其高酸度、草本植物香气和矿物质风味而闻名。
 
@@ -51,9 +52,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/55.png';
 
         var bottlerect = bottle.getBoundingClientRect();

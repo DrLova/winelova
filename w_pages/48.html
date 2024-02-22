@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
     <div id="internationalname" class="tastetitle">Tenuta Serranova Bianco Salento Fiano IGP </div>
     <div id="chinesename" class="winepagesubtitle">赛拉诺娃菲亚诺白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/48.gif" alt="Tenuta Serranova Bianco Salento Fiano IGP ">
     <div id="description" class="winepagetext">这款来自意大利坎帕尼亚大区的菲亚诺（Fiano）白葡萄酒，酒精度为 12.5% vol，拥有浓郁的果香和复杂的风味。
 
 葡萄在 9 月初手工采摘。去梗后，进行温控发酵，在 20 天内进行浸渍。葡萄酒在酒泥上陈酿 4 个月，然后进行冷稳定和微过滤。装瓶后陈酿 3 个月。
@@ -47,9 +48,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/48.png';
 
         var bottlerect = bottle.getBoundingClientRect();

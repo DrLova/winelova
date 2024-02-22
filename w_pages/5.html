@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
     <div id="internationalname" class="tastetitle">Lambrusco Emilia Amabile Rosso </div>
     <div id="chinesename" class="winepagesubtitle">Lambrusco Emilia Amabile Rosso </div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/5.gif" alt="Lambrusco Emilia Amabile Rosso ">
     <div id="description" class="winepagetext">这款葡萄酒采用拉姆布鲁斯科·萨拉米诺（Lambrusco Salamino）和拉姆布鲁斯科·格拉斯帕罗萨（Lambrusco Grasparossa）葡萄品种，酒精度为7.5% vol。采用红葡萄酒发酵工艺，葡萄在进行3-5天的浸渍后，酿酒过程中使用18-25℃的温度与选定的酵母进行缓慢发酵。其中一部分经过甜味过滤的葡萄汁会在0°C的冷却罐中保存。随后，拉姆布鲁斯科葡萄酒与相应的甜味过滤液一同置于高压釜中进行第二次发酵和起泡过程。在达到理想的压力和残留糖度后，这款气泡酒经过瓶装。酒液呈现出明亮的红宝石色，泡沫活泼持久。香气醇厚，略带果香。口感清新，和谐，活泼，味道鲜美而持久。</div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
     <div id="alcolval" class="winepagesubtitle">8.0 %</div>
@@ -34,9 +35,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/5.png';
 
         var bottlerect = bottle.getBoundingClientRect();

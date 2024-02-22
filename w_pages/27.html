@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
     <div id="internationalname" class="tastetitle">Marchio Prosecco rose' Doc</div>
     <div id="chinesename" class="winepagesubtitle">Marchio Prosecco rose' Doc</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/27.gif" alt="Marchio Prosecco rose' Doc">
     <div id="description" class="winepagetext">这是由格雷拉 (Glera) 和黑皮诺 (Pinot Noir) 葡萄酿成的迷人桃红气泡酒，酒精度仅为 11%，轻盈宜人。采用经典的夏马特 (Charmat) 酿造法，让酵母与葡萄酒液接触 30-90 天，充分萃取葡萄本身的果香和花香，不会被酵母产生的香气掩盖。
 酒液呈现迷人的淡粉色，透着优雅的铜色光泽，仿佛一杯落日的余晖。香气清丽，格雷拉葡萄带来细腻的洋槐花香，黑皮诺葡萄则赋予一丝紫罗兰和覆盆子的芬芳。入口清爽，浓郁的花香和果香交织，酒体饱满和谐，余味带有愉悦的莓果气息，仿佛夏日花园里的一缕清风。
 这款桃红气泡酒非常适合搭配餐前开胃饮用，或是在炎热的夏日享用。其精致优雅的口感和迷人的色泽，也使其成为婚礼庆祝或浪漫晚宴的绝佳选择。
@@ -46,9 +47,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/27.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
     <div id="internationalname" class="tastetitle">Tallero Moscato spumante</div>
     <div id="chinesename" class="winepagesubtitle">Tallero Moscato spumante</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/21.gif" alt="Tallero Moscato spumante">
     <div id="description" class="winepagetext">这是一款采用莫斯卡托葡萄酿造的低酒精甜白葡萄酒，散发着夏日般迷人的气息。
 
 葡萄轻柔压榨后，在低温条件下经24小时浸渍，萃取其饱满的果香。酒液呈现迷人的稻草黄，仿佛镶嵌着金色亮片，让人联想到夏日阳光下的麦田。
@@ -42,9 +43,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/21.png';
 
         var bottlerect = bottle.getBoundingClientRect();

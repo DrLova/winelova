@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Masseria Doppio Passo(玛斯利多宝酒庄)</div>
     <div id="internationalname" class="tastetitle">Appassimento Puglia IGT Rosso</div>
     <div id="chinesename" class="winepagesubtitle">玛斯利多宝帕塞托红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/46.gif" alt="Appassimento Puglia IGT Rosso">
     <div id="description" class="winepagetext">这是一款来自意大利普利亚大区的 Negroamaro-Malvasia-Merlot 混酿红葡萄酒，酒精度为 14.5% vol，拥有浓郁的果香、复杂的风味和悠长的余味。
 
 葡萄在 10 月初采摘，经过风干，赋予葡萄酒成熟水果如李子和葡萄干的典型香气。经过压榨和发酵，果皮与葡萄汁长时间接触，萃取浓郁的红色和迷人的香气。葡萄酒在橡木桶中陈酿 3-4 个月，赋予其优雅的香气和风味。
@@ -50,9 +51,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/46.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Fazi Battaglia(法芭雅酒庄)</div>
     <div id="internationalname" class="tastetitle">Passerina Marche IGT</div>
     <div id="chinesename" class="winepagesubtitle">法芭雅酒庄帕斯琳娜白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/50.gif" alt="Passerina Marche IGT">
     <div id="description" class="winepagetext">这款来自意大利马凯大区的帕斯琳娜 (Passerina) 白葡萄酒，由帕斯琳娜葡萄酿制而成，酒精度为 12.5% vol。
 
 葡萄在 9 月初手工采摘。去梗后，进行冷浸渍，然后进行温控发酵。发酵完成后，葡萄酒在酒泥上陈酿 4 个月。
@@ -47,9 +48,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/50.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Terre della Custodia(守护者酒庄)</div>
     <div id="internationalname" class="tastetitle">Montefalco Rosso DOC </div>
     <div id="chinesename" class="winepagesubtitle">守护者蒙特凡蔻红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/65.gif" alt="Montefalco Rosso DOC ">
     <div id="description" class="winepagetext">这款葡萄酒由意大利三大著名红葡萄品种混酿而成，分别是桑娇维塞、萨格兰蒂诺和蒙特普尔恰诺。酒精度为13.5%。
 
 葡萄酒呈现出深红宝石色，带有紫色反光。香气浓郁，充满了成熟的李子、紫罗兰和薄荷的香气。口感丰满，具有良好的圆润度，质地柔滑，优雅。葡萄酒可陈酿4-5年。
@@ -45,9 +46,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/65.png';
 
         var bottlerect = bottle.getBoundingClientRect();

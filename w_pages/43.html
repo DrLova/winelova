@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Botter(波特酒庄)</div>
     <div id="internationalname" class="tastetitle">Botter Ignoto nero d'avola doc </div>
     <div id="chinesename" class="winepagesubtitle">伊诺托黑达沃拉红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/43.gif" alt="Botter Ignoto nero d'avola doc ">
     <div id="description" class="winepagetext">这是一款来自西西里岛的内罗达沃拉 (Nero d'Avola) 红葡萄酒，拥有迷人的果香和独特的风土特色。10 月初葡萄完美成熟后，采摘过程直接从葡萄园开始。葡萄藤经过剪枝后风干两周，赋予葡萄酒成熟水果如李子和葡萄干的典型香气。经过压榨和发酵，果皮与葡萄汁长时间接触，萃取浓郁的红色和迷人的香气。传统酿造工艺在 25℃ 至 27℃ 的恒温下进行。
 
 酒液呈现迷人的深红色，香气微微辛辣果香，并带有风干无花果和成熟水果的诱人气息。口感圆润果香，单宁柔顺，伴有香草的悠长余味。这款内罗达沃拉葡萄酒展现了西西里的阳光和热情，非常适合搭配烤肉、意大利面或奶酪等菜肴，让您仿佛置身于地中海的阳光海岸。
@@ -37,9 +38,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/43.png';
 
         var bottlerect = bottle.getBoundingClientRect();

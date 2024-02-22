@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Farnese(法尼斯酒庄)</div>
     <div id="internationalname" class="tastetitle">Gran Sasso Sangiovese</div>
     <div id="chinesename" class="winepagesubtitle">格兰萨索桑娇维赛红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/26.gif" alt="Gran Sasso Sangiovese">
     <div id="description" class="winepagetext">桑娇维塞 (Sangiovese) 葡萄酒以其迷人的深红色彩和浓郁的果香著称，它是一款令人愉悦的中度酒体红葡萄酒，酒精含量为 13%。葡萄经过去梗破皮后，进行两天冷浸渍，萃取其迷人的果香和柔和的单宁。随后在 20-22°C 下浸渍发酵 9-11 天，赋予葡萄酒更丰富的层次感。值得一提的是，酿造者巧妙地将 10% 到 20% 的葡萄酒置于橡木桶中陈酿，而其余的部分则在不锈钢罐中陈酿，这一混酿手法既保留了橡木桶带来的优雅气息，又保持了桑娇维塞葡萄本身的果香纯净。
 
 因此，这款葡萄酒呈现出石榴红般的瑰丽色泽，散发着黑樱桃、黑莓、李子和甜美橡木桶陈酿香气的浓郁芬芳。入口后，酒体适中，单宁成熟柔顺，平衡易饮，令人回味无穷。总体而言，这是一款非常适合日常饮用的桑娇维塞葡萄酒，搭配意大利面、披萨或烤肉等经典意式料理都能展现出其迷人的魅力。
@@ -44,9 +45,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/26.png';
 
         var bottlerect = bottle.getBoundingClientRect();

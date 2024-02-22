@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Divine(蒂维妮)</div>
     <div id="internationalname" class="tastetitle">Teatro Piemonte rosso doc</div>
     <div id="chinesename" class="winepagesubtitle">Teatro Piemonte rosso doc</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/63.gif" alt="Teatro Piemonte rosso doc">
     <div id="description" class="winepagetext">这款葡萄酒由巴贝拉、多姿桃和内比奥罗三种葡萄品种混酿而成，酒精度为13.5%。采摘后，葡萄迅速运至酒窖进行去梗，然后进行7-8天的浸皮，以提取果皮中的颜色和单宁。发酵和苹果酸乳酸发酵均在25-27摄氏度的温控罐中进行。
 
 葡萄酒呈深红宝石色，颜色浓郁。香气浓郁，带有成熟的红色水果和细腻的香料香气。口感丰满，富有层次，单宁柔顺，余味悠长。
@@ -44,9 +45,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/63.png';
 
         var bottlerect = bottle.getBoundingClientRect();

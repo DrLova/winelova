@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Marchesi di Barolo(巴罗洛侯爵酒庄)</div>
     <div id="internationalname" class="tastetitle">Marchesi di Barolo Langhe Rosso </div>
     <div id="chinesename" class="winepagesubtitle">巴罗洛侯爵朗格红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/61.gif" alt="Marchesi di Barolo Langhe Rosso ">
     <div id="description" class="winepagetext">这款葡萄酒由多姿桃、巴贝拉和内比奥罗三种葡萄品种混酿而成，酒精度为14%。采摘时，根据葡萄成熟度分批进行手工采摘。采摘后，葡萄迅速运至酒窖进行去梗和轻压榨，以提取果皮和果肉中富含风味物质的部分。发酵在温控罐中进行，浸皮时间根据葡萄品种不同而有所差异，一般为6-8天。
 
 葡萄酒呈深红宝石色，香气复杂，融合了红色水果、干草、香料、坚果、黑巧克力等香气。口感平衡，单宁细腻，余味悠长。
@@ -44,9 +45,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/61.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Divine(蒂维妮)</div>
     <div id="internationalname" class="tastetitle">Teatro Governo all'uso toscano</div>
     <div id="chinesename" class="winepagesubtitle">Teatro Governo all'uso toscano</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/52.gif" alt="Teatro Governo all'uso toscano">
     <div id="description" class="winepagetext">桑娇维塞葡萄酒是一种产自意大利托斯卡纳地区的红葡萄酒。它由桑娇维塞葡萄酿造而成，该葡萄品种以其成熟晚、酸度高、单宁重而闻名。
 
 桑娇维塞葡萄酒的酒精含量约为13.5%，颜色为深红色。其香气主要表现为樱桃、覆盆子、李子、香草和肉桂。口感上，桑娇维塞葡萄酒酒体饱满，酸度明亮，单宁结实，具有良好的陈年潜力。
@@ -50,9 +51,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/52.png';
 
         var bottlerect = bottle.getBoundingClientRect();

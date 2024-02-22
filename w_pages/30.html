@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Farnese(法尼斯酒庄)</div>
     <div id="internationalname" class="tastetitle">Gran Sasso Montepulciano d’Abruzzo DOC</div>
     <div id="chinesename" class="winepagesubtitle">格兰萨索阿布鲁佐红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/30.gif" alt="Gran Sasso Montepulciano d’Abruzzo DOC">
     <div id="description" class="winepagetext">这是一款迷人的蒙特普尔恰诺·达布鲁佐 (Montepulciano d'Abruzzo) 红葡萄酒，散发出浓郁的意大利阳光气息，酒精含量为 13%。葡萄运到酒庄后，经过轻柔的压榨和去梗，在低温下浸渍四天，萃取其迷人的果香和清新气息。随后在不锈钢罐中，于 24-26°C 的适宜温度下发酵 8-10 天，赋予葡萄酒更丰富的层次感和平衡的结构。
 酒液呈现宝石般闪耀的红宝石色，闪烁着石榴红的微光，仿佛夕阳洒落在葡萄园的迷人景象。香气浓郁持久，果香馥郁，散发着强烈的野生浆果香气，如蓝莓、黑莓和覆盆子，令人仿佛置身于夏日果园中。
 
@@ -46,9 +47,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/30.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
     <div id="internationalname" class="tastetitle">Vallone Veritas Nero di Troia </div>
     <div id="chinesename" class="winepagesubtitle">维塔斯黑托雅红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/18.gif" alt="Vallone Veritas Nero di Troia ">
     <div id="description" class="winepagetext">采用内罗迪特罗亚葡萄酿造的這款葡萄酒，酒精度為 13.5%。十月的第二周葡萄成熟，在 25°C 的控溫條件下浸漬 9-10 天，過程中運用淋皮、放血和微氧氣技術。随后陳釀于玻璃化水泥罐中，并持续微氧处理。经过瓶陈的洗礼，葡萄酒臻于完美。酒液呈現清澈的紫紅色，散发着浓郁新鲜的红色水果香气，典型紫罗兰花气息令人沉醉。口感年轻、清新、优雅，果味丰沛，果味与结构的平衡令人赞叹。
 </div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
@@ -35,9 +36,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/18.png';
 
         var bottlerect = bottle.getBoundingClientRect();

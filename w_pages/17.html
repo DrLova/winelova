@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
     <div id="internationalname" class="tastetitle">Vallone Levante Merlot </div>
     <div id="chinesename" class="winepagesubtitle">乐凡特梅洛红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/17.gif" alt="Vallone Levante Merlot ">
     <div id="description" class="winepagetext">这是使用梅洛葡萄 (Merlot) 酿造的红葡萄酒，酒精度为 14%。葡萄采摘于9月中旬，经过 26-27℃ 下长达 20 天浸渍，并运用淋皮、放血和微氧化技术萃取风味。随后苹果酸-乳酸发酵自然进行。陈酿方面，葡萄酒一部分在新橡木桶中，一部分在玻璃化水泥罐中陈酿，再经过 3 个月的瓶中陈酿后完美熟成。酒液呈现宝石红般的色泽，散发成熟红浆果、香草和咖啡的馥郁果香。口感饱满醇厚，单宁细腻柔顺，余味悠长，收尾干净利落。
 </div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
@@ -35,9 +36,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/17.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
     <div id="internationalname" class="tastetitle">Susumaniello Rosso Salento IGP </div>
     <div id="chinesename" class="winepagesubtitle">苏曼尼洛红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/47.gif" alt="Susumaniello Rosso Salento IGP ">
     <div id="description" class="winepagetext">这款来自意大利普利亚大区的 Susumaniello 红葡萄酒，酒精度为 13.5% vol，拥有浓郁的果香、复杂的风味和悠长的余味。
 
 葡萄在 9 月下旬手工和机械采摘。去梗后，进行温控发酵和发酵后浸渍，在不锈钢罐中持续 15 天。然后进行自然苹果酸乳酸发酵。葡萄酒在水泥罐中陈酿，装瓶后陈酿 3 个月。
@@ -49,9 +50,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/47.png';
 
         var bottlerect = bottle.getBoundingClientRect();

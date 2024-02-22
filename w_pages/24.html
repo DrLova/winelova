@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
     <div id="internationalname" class="tastetitle">Tallero Prosecco DOC Treviso Extra Dry</div>
     <div id="chinesename" class="winepagesubtitle">泰勒普罗塞克起泡白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/24.gif" alt="Tallero Prosecco DOC Treviso Extra Dry">
     <div id="description" class="winepagetext">这是采用格雷拉葡萄酿造的一款干型气泡酒，散发着迷人的果香和花香气息，酒精度仅为11%，非常适合轻松畅饮。
 
 葡萄经过手工采摘，提前进行采收以保持其酸度，然后立即压榨并轻轻压榨以提取首榨汁。随后在16-18°C的控温条件下进行酒精发酵，以获得基础葡萄酒，并将其保持在低温下以避免苹果酸-乳酸发酵。然后，这种基础葡萄酒将在密闭罐中再次发酵，加入相同品种的葡萄汁，大约一个月，直到压力达到5巴。由于普罗塞克是一种芳香型葡萄酒，因此不建议瓶内二次发酵，瓶内酵母的气味会掩盖其芳香。
@@ -43,9 +44,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/24.png';
 
         var bottlerect = bottle.getBoundingClientRect();

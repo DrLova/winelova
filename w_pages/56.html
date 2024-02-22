@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
     <div id="internationalname" class="tastetitle">Maschio Valdobbiadene Prosecco Superiore DOCG Millesimato Extra Dry</div>
     <div id="chinesename" class="winepagesubtitle">玛斯乔普赛克起泡葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/56.gif" alt="Maschio Valdobbiadene Prosecco Superiore DOCG Millesimato Extra Dry">
     <div id="description" class="winepagetext">瓦尔多比亚代内普洛赛克超级DOCG是一种产自意大利威尼托地区的起泡酒。它由格雷拉葡萄酿造而成，该葡萄品种以其高酸度、新鲜度和花香而闻名。
 
 瓦尔多比亚代内普洛赛克超级DOCG的酒精含量约为11%，颜色为淡黄绿色。其香气主要表现为柑橘类水果、花朵和蜂蜜。口感上，瓦尔多比亚代内普洛赛克超级DOCG清爽、果香浓郁、口感柔和。
@@ -50,9 +51,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/56.png';
 
         var bottlerect = bottle.getBoundingClientRect();

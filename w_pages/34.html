@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Donnafugata(多娜佳塔酒庄 )</div>
     <div id="internationalname" class="tastetitle">Anthìlia Sicilia DOC </div>
     <div id="chinesename" class="winepagesubtitle">多娜佳塔阿塞丽白葡萄酒 375ml</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/34.gif" alt="Anthìlia Sicilia DOC ">
     <div id="description" class="winepagetext">这款葡萄酒采用梅洛 (Merlot) 和赤霞珠 (Cabernet Sauvignon) 葡萄酿造，酒精度为 15% Vol。葡萄汁在不锈钢桶中发酵，温度控制在 14-16°C，然后在桶中陈酿两个月，再在瓶中陈酿至少两个月才上市。酒液呈现稻草黄色，闻香清新果香，以白肉水果 (苹果) 为主，并伴有野花香气。口感水果味明显，并带有愉悦的酸度，余味悠长。
 </div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
@@ -35,9 +36,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/34.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
     <div id="internationalname" class="tastetitle">Movendo Moscato</div>
     <div id="chinesename" class="winepagesubtitle">莫维朵莫斯卡托起泡白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/20.gif" alt="Movendo Moscato">
     <div id="description" class="winepagetext">采用莫斯卡托葡萄酿造的这款甜白葡萄酒，酒精度仅为6%，酒液呈现迷人的稻草黄，仿佛镶嵌着金色亮片。馥郁的蜜香扑鼻而来，梨子和杏子的芬芳若隐若现，令人垂涎欲滴。入口清新活泼，杏子般的甜蜜萦绕舌尖，留下悠长清甜的余味，仿佛春日阳光般温暖舒适。
 </div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
@@ -35,9 +36,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/20.png';
 
         var bottlerect = bottle.getBoundingClientRect();

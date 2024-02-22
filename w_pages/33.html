@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
     <div id="internationalname" class="tastetitle">Passione Eterna Salice Salentino DOC Riserva </div>
     <div id="chinesename" class="winepagesubtitle">帕尼爱娜珍藏红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/33.gif" alt="Passione Eterna Salice Salentino DOC Riserva ">
     <div id="description" class="winepagetext">九月第二个十天，内格罗阿玛罗葡萄经人工和机器采摘，开启酿造旅程。汁液在温控条件下发酵7-10天，随后迎来短暂的浸渍；酒精发酵结束后，苹果酸-乳酸自然发酵为酒增添丝滑。葡萄酒先在不锈钢罐中陈酿，再移至50hl斯拉夫橡木桶熟成6-8个月，后在混凝土罐中安卧约12个月。上市前，静置瓶中6-8个月赋予其最终的优雅。酒液呈现浓郁的红宝石色，闪烁紫色光泽，深邃而明亮。香气馥郁，充盈着果香，优雅的香脂和辛香料随之萦绕。入口口感坚实平衡，柔顺顺滑，酒体饱满，余味悠长，令人回味无穷。
 </div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
@@ -35,9 +36,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/33.png';
 
         var bottlerect = bottle.getBoundingClientRect();

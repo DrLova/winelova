@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
     <div id="internationalname" class="tastetitle">VILLA FLAMINIO 15 NEGROAMARO IGP</div>
     <div id="chinesename" class="winepagesubtitle">VILLA FLAMINIO 15 NEGROAMARO IGP</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/41.gif" alt="VILLA FLAMINIO 15 NEGROAMARO IGP">
     <div id="description" class="winepagetext">这里是用中文描述您提供的 Negroamaro 葡萄酒信息的一段话：
 
 这款来自意大利南部普利亚大区的尼格罗阿马罗 (Negroamaro) 红葡萄酒，散发着浓郁迷人的果香和优雅的酒体，令人印象深刻。
@@ -47,9 +48,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/41.png';
 
         var bottlerect = bottle.getBoundingClientRect();

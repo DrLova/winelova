@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Botter(波特酒庄)</div>
     <div id="internationalname" class="tastetitle">Soave </div>
     <div id="chinesename" class="winepagesubtitle">托尔山白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/19.gif" alt="Soave ">
     <div id="description" class="winepagetext">这是采用加尔加内加、特雷比奥和霞多丽葡萄混酿的一款白葡萄酒，酒精度仅为12%。
 酿造过程中，葡萄经过轻柔压榨以去除果皮中的色素，果汁在16-18°C的低温不锈钢罐中发酵。因此，这款酒呈现出清淡的柠檬黄色。
 经典的清新花香扑鼻而来，让人联想到盛开的野花田。入口口感清新怡人，犹如春日清晨的微风拂过舌尖，是炎炎夏日的一抹清凉慰藉。
@@ -38,9 +39,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/19.png';
 
         var bottlerect = bottle.getBoundingClientRect();

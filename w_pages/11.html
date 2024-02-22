@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Rocca delle Macie(罗卡马契酒庄 )</div>
     <div id="internationalname" class="tastetitle">Conte Moretti </div>
     <div id="chinesename" class="winepagesubtitle">莫雷蒂伯爵红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/11.gif" alt="Conte Moretti ">
     <div id="description" class="winepagetext">这款葡萄酒采用桑吉欧维塞和西拉葡萄，酒精含量为13.5%Vol。酿造过程中，精选成熟的葡萄分别进行发酵，然后在装瓶前混合。桑吉欧维塞葡萄采用传统方法发酵，保持低温。酒呈现出深红宝石色，色泽浓郁而明亮。香气非常浓郁且复杂，带有来自混合葡萄品种的成熟红果香气。口感柔和且丰满，具有良好的结构，伴随着宜人的清新感和由西拉和桑吉欧维塞赋予的美好香料和复杂尾韵</div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
     <div id="alcolval" class="winepagesubtitle">13.5 %</div>
@@ -34,9 +35,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/11.png';
 
         var bottlerect = bottle.getBoundingClientRect();

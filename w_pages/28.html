@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Tinazzi(蒂纳兹酒庄)</div>
     <div id="internationalname" class="tastetitle">Tinazzi Romeo Negramaro IGP </div>
     <div id="chinesename" class="winepagesubtitle">罗密欧黑曼罗红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/28.gif" alt="Tinazzi Romeo Negramaro IGP ">
     <div id="description" class="winepagetext">这是款迷人的内格罗阿马罗 (Negroamaro) 红葡萄酒，散发出浓郁的意大利阳光气息，酒精含量 14%。葡萄经过压榨去梗后，在 22-26°C 的控温条件下浸渍发酵 8-12 天，充分萃取果香和单宁，随后经过轻柔压榨。陈酿方面，葡萄酒在小型美国橡木桶中陈酿 4-8 个月，橡木桶的细微香气与内格罗阿马罗本身的果香完美融合。
 酒液呈现宝石般闪耀的深红色，香气愉悦而细腻，散发着玛斯卡樱桃、蜜饯和肉桂的馥郁果香与迷人 spice 香气。入口口感圆润和谐，果香与 spice 香气在舌尖萦绕，酒体饱满，单宁柔顺，余味悠长，令人回味无穷。这是一款非常适合搭配烤肉、意大利面或炖菜等丰盛菜肴的葡萄酒，也能在餐后细细品味其迷人风情。
 
@@ -44,9 +45,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/28.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Fazi Battaglia(法芭雅酒庄)</div>
     <div id="internationalname" class="tastetitle">Fazi Battaglia Montepulciano </div>
     <div id="chinesename" class="winepagesubtitle">法芭雅蒙特布查诺红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/45.gif" alt="Fazi Battaglia Montepulciano ">
     <div id="description" class="winepagetext">这款来自意大利阿布鲁佐大区的蒙特普尔恰诺 (Montepulciano) 红葡萄酒，酒精度为 14% vol，拥有浓郁的果香和强劲的单宁。
 
 葡萄在 9 月初采摘，经过 5 天的低温浸渍，然后在 25-28℃ 的恒温下进行酒精发酵。发酵结束后，葡萄酒在果皮上继续浸渍一周。
@@ -49,9 +50,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/45.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">CPV di Manduria(曼都利亚酒庄)</div>
     <div id="internationalname" class="tastetitle">AKA Salento Primitivo Rosato IGP </div>
     <div id="chinesename" class="winepagesubtitle">红珊瑚桃红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/64.gif" alt="AKA Salento Primitivo Rosato IGP ">
     <div id="description" class="winepagetext">意大利 AKA Rosato 葡萄酒由普利亚产区 20-40 年“阿尔贝勒罗”种植的 Primitivo 葡萄手工采摘酿造而成。葡萄酒采用红葡萄酒酿造工艺，于 8 月下旬采收。葡萄轻柔压榨后，在果皮上浸泡 8-12 小时。发酵在 18°C 的温控不锈钢罐中进行，持续 3 个月。葡萄酒随后在瓶中陈酿。
 
 
@@ -45,9 +46,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/64.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
     <div id="internationalname" class="tastetitle">Maschio Spumante Rose'</div>
     <div id="chinesename" class="winepagesubtitle">Maschio Spumante Rose'</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/23.gif" alt="Maschio Spumante Rose'">
     <div id="description" class="winepagetext">这是一款采用格雷拉和拉博索葡萄混酿的桃红气泡酒，散发着迷人的果香和花香气息，酒精度仅为11.5%，非常适合轻松畅饮。
 
 红葡萄采摘后，经过轻柔压榨并在低温下浸渍一夜，萃取出一部分色素和花青素，赋予酒液迷人的玫瑰粉色和细腻持久的汽泡。随后葡萄酒在不锈钢罐中进行首次发酵，控温精准，保证其清新的果香。接着在恒温密闭罐中加入酵母进行二次发酵，将糖分转化为酒精和二氧化碳，带来欢快的起泡口感。经过精确控温和过滤后，葡萄酒装瓶上市，等待与你相遇。
@@ -41,9 +42,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/23.png';
 
         var bottlerect = bottle.getBoundingClientRect();

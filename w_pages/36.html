@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Terre della Custodia(守护者酒庄)</div>
     <div id="internationalname" class="tastetitle">Collezione Colli Martani Rosso DOC </div>
     <div id="chinesename" class="winepagesubtitle">守护者格莱至美红葡萄酒  </div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/36.gif" alt="Collezione Colli Martani Rosso DOC ">
     <div id="description" class="winepagetext">桑娇维塞、萨格拉蒂诺和梅洛葡萄的联袂演出，打造出一款令人沉醉的红葡萄酒，酒精度13.5%，散发着迷人的宝石红光泽。
 
 来自托斯卡纳的热情: 葡萄采摘期跨越9月底至10月初，确保成熟度和风味达到巅峰。
@@ -43,9 +44,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/36.png';
 
         var bottlerect = bottle.getBoundingClientRect();

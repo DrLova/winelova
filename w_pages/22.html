@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Botter(波特酒庄)</div>
     <div id="internationalname" class="tastetitle">Botter Alternativa Sauvignon doc </div>
     <div id="chinesename" class="winepagesubtitle">继承者长相思白葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/22.gif" alt="Botter Alternativa Sauvignon doc ">
     <div id="description" class="winepagetext">这是采用长相思葡萄酿造的一款清雅白葡萄酒，散发着迷人的果香气息。
 
 葡萄经过轻柔压榨后，果汁在15-17℃的恒温不锈钢罐中发酵15-20天，酒精度控制在12%左右。随后葡萄酒在18-20℃的控温条件下陈酿至装瓶，确保其清凉果香的最佳呈现。
@@ -47,9 +48,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/22.png';
 
         var bottlerect = bottle.getBoundingClientRect();

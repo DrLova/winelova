@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">L'Arco(拉寇酒庄)</div>
     <div id="internationalname" class="tastetitle">Principe del Sole Sangiovese 2011 </div>
     <div id="chinesename" class="winepagesubtitle">太阳王子桑娇维塞红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/25.gif" alt="Principe del Sole Sangiovese 2011 ">
     <div id="description" class="winepagetext">这是采用传奇的桑娇维塞葡萄酿造的一款红葡萄酒，散发出优雅的果香和平衡的口感，酒精度仅为13%。
 
 葡萄经过精心采摘，严格筛选，萃取精华酿造出这款迷人的佳酿。葡萄酒经过6个月的瓶中陈酿，充分展现其内敛的个性。酒液呈现浓郁的宝石红，泛着迷人的紫罗兰色泽，清澈明亮。
@@ -45,9 +46,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/25.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
     <div id="internationalname" class="tastetitle">Lambrusco Emilia Amabile Bianco</div>
     <div id="chinesename" class="winepagesubtitle">Lambrusco Emilia Amabile Bianco</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/3.gif" alt="Lambrusco Emilia Amabile Bianco">
     <div id="description" class="winepagetext">这款葡萄酒采用Lambrusco Salamino葡萄酿制，酒精含量为7.5%。在酿造过程中，Lambrusco葡萄被小心地采摘和运输，以避免破损果皮。一旦到达酒窖，只提取葡萄汁花，然后在不锈钢槽中低温发酵。通过这种方式，可以从红葡萄中制作出白葡萄酒。这是一种长期以来在世界上最好的葡萄酒产区以及我们的地区一直在使用的方法。酒的颜色呈淡黄色，带有绿色反光，香气淡雅、清新而果味浓郁，口感平衡而略带甜味。</div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
     <div id="alcolval" class="winepagesubtitle">7.5 %</div>
@@ -34,9 +35,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/3.png';
 
         var bottlerect = bottle.getBoundingClientRect();

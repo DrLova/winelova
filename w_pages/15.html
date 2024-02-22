@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Agricole Vallone(瓦罗内酒庄)</div>
     <div id="internationalname" class="tastetitle">La Torre </div>
     <div id="chinesename" class="winepagesubtitle">莱塔瑞红葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/15.gif" alt="La Torre ">
     <div id="description" class="winepagetext">西拉葡萄酿造的这款葡萄酒散发出迷人的深红宝石色，闪烁着迷人的紫罗兰色光泽。香气馥郁，果香与辛香完美融合，伴有丝丝缕缕的植物清香。入口口感饱满强劲，结构细腻，层次丰富。柔和的开场逐渐演变成悠长的尾韵，软糯的单宁轻轻包裹着味蕾，萦绕着悠长的辛辣香气。这是一款经过精心酿造的佳酿，葡萄采摘于九月下旬，经人工和机器精心挑选，采用恒温不锈钢罐发酵15天，再于混凝土罐中陈酿3个月，成就了其强劲又不失优雅的独特风味。</div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
     <div id="alcolval" class="winepagesubtitle">13.5 %</div>
@@ -34,9 +35,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/15.png';
 
         var bottlerect = bottle.getBoundingClientRect();

@@ -11,6 +11,7 @@
     <div id="wineryname" class="winepagesubtitle">Cantine Riunite(联合酿酒集团 （玛斯乔）)</div>
     <div id="internationalname" class="tastetitle">OTTOCENTOROSA Spumante Rosé Extra Dry Lambrusco Emilia</div>
     <div id="chinesename" class="winepagesubtitle">特莎蒂洛蓝布鲁斯科桃红起泡葡萄酒</div>
+    <img id="winescheme" class="winepagescheme" src="..\w_schemes/14.gif" alt="OTTOCENTOROSA Spumante Rosé Extra Dry Lambrusco Emilia">
     <div id="description" class="winepagetext">这款意大利葡萄酒采用Lambrusco Grasparossa和Lambrusco di Sorbara葡萄品种酿造，酒精含量为11% vol。酒色呈现出明亮的粉红，带有轻盈的泡沫。香气丰富，充满着紫罗兰和野玫瑰的花香。口感清新，伴随着樱桃和蓝莓的果香。而且，它带有一丝柚子的回味，为整体口感增添了一抹柑橘的风味。</div>
     <div id="alcollevel" class="winepagesubtitle">酒精度</div>
     <div id="alcolval" class="winepagesubtitle">11.0 %</div>
@@ -34,9 +35,10 @@
         var winery = placeunder("wineryname",backhome,5);
         var titlew = placeunder("internationalname",winery,20);
         var subtitle = placeunder("chinesename",titlew,10);
-        var descr =placeunder("description",subtitle,10);
+        var winescheme = placeunder("winescheme",subtitle,10)
+        var descr =placeunder("description",winescheme,10);
         var descrect = descr.getBoundingClientRect();
-        var bottle = placeunder("winepic",subtitle,10);
+        var bottle = placeunder("winepic",winescheme,10);
         bottle.src = '../w_pictures/14.png';
 
         var bottlerect = bottle.getBoundingClientRect();
